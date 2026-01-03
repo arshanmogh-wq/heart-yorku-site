@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About HEART">
+  <h1>About HEART</h1>
+
+  <p>
+    HEART (Health Equity Advocacy Response Team) is committed to ensuring that
+    everyone has a fair and just opportunity to achieve optimal health.
+  </p>
+
+  <p>
+    We focus on advocacy, community engagement, education, and awareness to
+    address inequities rooted in social and systemic barriers.
+  </p>
+</BaseLayout>
