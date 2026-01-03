@@ -1,7 +1,40 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="About — HEART">
-  <h1>About HEART</h1>
-  <p>HEART (Health Equity Advocacy Response Team) is a student-led organization dedicated to advancing health equity.</p>
+
+<BaseLayout title="About HEART – Health Equity Advocacy Response Team">
+  <section class="section">
+    <div class="container">
+      <h1 style="margin:0 0 10px;">About HEART</h1>
+      <p class="lead">
+        HEART (Health Equity Advocacy Response Team) is a student-led organization dedicated to advancing
+        <b>health equity</b> by addressing systemic, social, and economic barriers that prevent individuals
+        and communities from achieving optimal health.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Our Vision</h3>
+          <p>A world where every individual—regardless of background—has equal opportunity to achieve optimal health.</p>
+        </div>
+        <div class="card">
+          <h3>Our Mission</h3>
+          <p>Advocate, educate, and act in response to health inequities through community-centered initiatives.</p>
+        </div>
+        <div class="card">
+          <h3>What is Health Equity?</h3>
+          <p>Ensuring everyone has a fair and just opportunity to be as healthy as possible by removing barriers.</p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:16px;">
+        <strong>Barriers we address:</strong> poverty, discrimination, access gaps, language barriers, educational gaps, and more.
+      </div>
+
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="/join">Join HEART</a>
+        <a class="btn btn-outline" href="/events">View events</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
