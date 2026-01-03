@@ -1,50 +1,94 @@
 ---
-import "../styles/global.css";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Nav />
+<BaseLayout title="HEART – Health Equity Advocacy Response Team">
+  <div class="container page">
 
-<main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-art" aria-hidden="true">
+        <div class="blob blob--orange"></div>
+        <div class="blob blob--teal"></div>
+        <div class="blob blob--cream"></div>
+      </div>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-text">
-      <div class="badge">York University • Student-Led • Est. 2024</div>
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">York University • Student-led • Est. 2024</div>
 
-      <h1>
-        <span class="blue">H</span><span class="orange">E</span><span class="blue">A</span><span class="orange">R</span><span class="blue">T</span>
-      </h1>
+          <h1>
+            <span class="title-accent">HEART</span>
+          </h1>
 
-      <h2>Health Equity Advocacy Response Team</h2>
+          <h2>Health Equity Advocacy Response Team</h2>
 
+          <p>
+            HEART is a student-led organization advancing health equity by addressing
+            systemic, social, and economic barriers to health through advocacy, education,
+            outreach, and community partnerships.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--primary" href="/join">Get Involved</a>
+            <a class="btn btn--secondary" href="/about">Learn More</a>
+          </div>
+        </div>
+
+        <div class="hero-logo">
+          <!-- LOGO IMAGE HERE -->
+          <img src="/images/heart-logo.png" alt="HEART logo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION -->
+    <section class="section section--teal">
+      <h1 class="title-accent" style="font-size: 1.7rem; margin: 0 0 10px;">Mission</h1>
       <p>
-        HEART is a student-led organization advancing health equity by addressing
-        systemic, social, and economic barriers to health.
+        To advocate, educate, and act in response to health inequities by empowering communities,
+        supporting evidence-based initiatives, and fostering inclusive healthcare systems.
+      </p>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section class="section section--cream">
+      <h1 class="title-accent" style="font-size: 1.7rem; margin: 0 0 10px;">What We Do</h1>
+      <p>
+        We respond to inequities with ethical, inclusive, and community-centered action.
       </p>
 
-      <div class="buttons">
-        <a href="/join" class="btn primary">Join HEART</a>
-        <a href="/about" class="btn secondary">Learn More</a>
+      <div class="grid">
+        <div class="card" data-accent="orange">
+          <h3>Advocacy</h3>
+          <p>Raise awareness about health disparities and support equity-focused change.</p>
+        </div>
+
+        <div class="card" data-accent="teal">
+          <h3>Community Engagement</h3>
+          <p>Volunteer, collaborate, and build partnerships that create real-world impact.</p>
+        </div>
+
+        <div class="card" data-accent="cream">
+          <h3>Education</h3>
+          <p>Workshops and evidence-based resources to combat misinformation and barriers.</p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- LOGO PLACEMENT -->
-    <div class="hero-logo">
-      <img src="/images/heart-logo.png" alt="HEART Logo" />
-    </div>
-  </section>
+    <!-- GET INVOLVED -->
+    <section class="section">
+      <h1 class="title-accent" style="font-size: 1.7rem; margin: 0 0 10px;">Get Involved</h1>
+      <p>
+        Join HEART to take part in volunteering, outreach, advocacy campaigns, event planning, and
+        leadership opportunities.
+      </p>
 
-  <!-- MISSION -->
-  <section class="section">
-    <h3>Our Mission</h3>
-    <p>
-      To advocate, educate, and act in response to health inequities by empowering
-      communities and supporting inclusive, evidence-based healthcare initiatives.
-    </p>
-  </section>
+      <div class="actions">
+        <a class="btn btn--primary" href="/join">Join HEART</a>
+        <a class="btn btn--secondary" href="/events">See Events</a>
+      </div>
+    </section>
 
-  <!-- WHAT WE DO -->
-  <section class="section grid">
-    <div class="card">
+  </div>
+</BaseLayout>
