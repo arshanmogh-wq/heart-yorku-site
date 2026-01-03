@@ -1,27 +1,34 @@
 ---
+const current = (Astro.url.pathname.replace(/\/$/, "") || "/");
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/join", label: "Join" },
   { href: "/events", label: "Events" },
 ];
-const path = Astro.url.pathname;
+
+function isActive(href) {
+  const clean = (href.replace(/\/$/, "") || "/");
+  return clean === current;
+}
 ---
 
 <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/" aria-label="HEART Home">
-      <span class="brand-mark">HEART</span>
-      <span class="brand-sub">Health Equity Advocacy Response Team</span>
+  <div class="site-header__inner">
+    <a class="brand" href="/">
+      <img class="brand__logo" src="/images/heart-logo.png" alt="HEART logo" />
+      <div>
+        <div class="brand__name">HEART</div>
+        <span class="brand__tag">Health Equity Advocacy Response Team</span>
+      </div>
     </a>
 
-    <nav class="nav" aria-label="Primary">
+    <nav class="site-nav" aria-label="Primary navigation">
       {links.map((l) => (
-        <a class:list={["nav-link", path === l.href ? "active" : ""]} href={l.href}>
+        <a class={"site-nav__link" + (isActive(l.href) ? " is-active" : "")} href={l.href}>
           {l.label}
         </a>
       ))}
-      <a class="btn btn-sm btn-primary" href="/join">Get involved</a>
     </nav>
   </div>
 </header>
