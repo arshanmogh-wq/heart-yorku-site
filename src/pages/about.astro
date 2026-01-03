@@ -2,38 +2,46 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="About HEART – Health Equity Advocacy Response Team">
+<BaseLayout title="About HEART">
   <section class="section">
-    <div class="container">
-      <h1 style="margin:0 0 10px;">About HEART</h1>
-      <p class="lead">
-        HEART (Health Equity Advocacy Response Team) is a student-led organization dedicated to advancing
-        <b>health equity</b> by addressing systemic, social, and economic barriers that prevent individuals
-        and communities from achieving optimal health.
+    <div class="container surface" style="padding: 26px;">
+      <h1 class="page-title">About HEART</h1>
+      <p class="page-sub">
+        HEART (Health Equity Advocacy Response Team) is a student-led organization dedicated to advancing <b>health equity</b>
+        by addressing systemic, social, and economic barriers that prevent individuals and communities from achieving optimal health.
       </p>
 
       <div class="grid-3">
         <div class="card">
+          <span class="card-kicker"></span>
           <h3>Our Vision</h3>
           <p>A world where every individual—regardless of background—has equal opportunity to achieve optimal health.</p>
         </div>
+
         <div class="card">
+          <span class="card-kicker"></span>
           <h3>Our Mission</h3>
           <p>Advocate, educate, and act in response to health inequities through community-centered initiatives.</p>
         </div>
+
         <div class="card">
-          <h3>What is Health Equity?</h3>
-          <p>Ensuring everyone has a fair and just opportunity to be as healthy as possible by removing barriers.</p>
+          <span class="card-kicker"></span>
+          <h3>Our Values</h3>
+          <p>Equity, inclusion, integrity, collaboration, and empowerment—evidence-based and ethically grounded.</p>
         </div>
       </div>
 
-      <div class="callout" style="margin-top:16px;">
-        <strong>Barriers we address:</strong> poverty, discrimination, access gaps, language barriers, educational gaps, and more.
-      </div>
+      <div class="hr"></div>
 
-      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+      <h2 style="margin: 0 0 10px; color: var(--navy);">What is Health Equity?</h2>
+      <p style="margin:0; color: var(--muted); font-size: 1.05rem;">
+        Health equity means ensuring everyone has a fair and just opportunity to be as healthy as possible by removing barriers like
+        poverty, discrimination, access gaps, language barriers, and educational inequities.
+      </p>
+
+      <div class="hero-actions" style="margin-top: 18px;">
         <a class="btn btn-primary" href="/join">Join HEART</a>
-        <a class="btn btn-outline" href="/events">View events</a>
+        <a class="btn btn-secondary" href="/events">View events</a>
       </div>
     </div>
   </section>
