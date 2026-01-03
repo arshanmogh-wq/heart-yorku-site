@@ -1,33 +1,42 @@
 ---
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/join", label: "Join" },
-  { href: "/events", label: "Events" },
-  { href: "/#get-involved", label: "Get involved" },
-];
-
-const path = Astro.url.pathname;
-const isActive = (href) => (href === "/" ? path === "/" : path.startsWith(href.replace("/#", "/")));
+const pathname = Astro.url.pathname;
+const isActive = (href) => (href === "/" ? pathname === "/" : pathname === href);
 ---
 
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="HEART home">
-      <img class="brand-logo" src="/images/logo.png" alt="HEART logo" loading="eager" />
+      <img
+        class="brand-logo"
+        src="/images/heart-logo.png"
+        alt="HEART logo"
+        loading="eager"
+      />
       <div class="brand-text">
         <span class="brand-name">HEART</span>
-        <span class="brand-sub">Health Equity Advocacy Response Team</span>
+        <span class="brand-subtitle">Health Equity Advocacy Response Team</span>
       </div>
     </a>
 
-    <nav class="site-nav" aria-label="Primary navigation">
-      {links.map((l) => (
-        <a class:list={["nav-link", isActive(l.href) && "active"]} href={l.href}>
-          {l.label}
-        </a>
-      ))}
-      <a class="nav-cta" href="/join">Join</a>
+    <nav class="nav" aria-label="Primary navigation">
+      <ul class="nav-list">
+        <li>
+          <a class={`nav-link ${isActive("/") ? "is-active" : ""}`} href="/">Home</a>
+        </li>
+        <li>
+          <a class={`nav-link ${isActive("/about") ? "is-active" : ""}`} href="/about">About</a>
+        </li>
+        <li>
+          <a class={`nav-link ${isActive("/events") ? "is-active" : ""}`} href="/events">Events</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/#get-involved">Get involved</a>
+        </li>
+      </ul>
     </nav>
+
+    <a class={`button button-primary header-cta ${isActive("/join") ? "is-active-cta" : ""}`} href="/join">
+      Join
+    </a>
   </div>
 </header>
