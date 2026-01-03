@@ -1,21 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+/*
+Replace the URL below with your Google Form “embed” link.
+Google Form → Send → <> Embed HTML → copy the src URL.
+*/
+const formEmbedUrl = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true";
 ---
 
 <BaseLayout title="Join HEART">
-  <h1>Join HEART</h1>
+  <section class="section">
+    <div class="container surface" style="padding: 26px;">
+      <h1 class="page-title">Join HEART</h1>
+      <p class="page-sub">
+        HEART welcomes students from all disciplines who are passionate about health equity, social justice, and community service.
+        Opportunities include volunteering, leadership roles, advocacy campaigns, and event planning.
+      </p>
 
-  <p>
-    HEART welcomes students from all disciplines who are passionate about health
-    equity, social justice, and community service.
-  </p>
+      <div class="hero-actions" style="margin-bottom: 14px;">
+        <a class="btn btn-primary" href={formEmbedUrl} target="_blank" rel="noreferrer">Open form in new tab</a>
+        <a class="btn btn-secondary" href="mailto:heartyorku@gmail.com">Email us</a>
+      </div>
 
-  <p>
-    Opportunities include volunteering, leadership roles, advocacy campaigns,
-    and event planning.
-  </p>
-
-  <p>
-    Interested? Reach out to us or follow our socials to get involved.
-  </p>
+      <iframe
+        class="embed"
+        src={formEmbedUrl}
+        title="Join HEART — Google Form"
+        loading="lazy"
+      >
+        Loading…
+      </iframe>
+    </div>
+  </section>
 </BaseLayout>
