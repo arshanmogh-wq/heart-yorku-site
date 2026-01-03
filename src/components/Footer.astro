@@ -1,33 +1,40 @@
+---
+const year = new Date().getFullYear();
+---
+
 <footer class="site-footer">
-  <div class="container footer-inner">
+  <div class="footer-top"></div>
+
+  <div class="container footer-grid">
     <div>
       <div class="footer-title">HEART</div>
-      <p class="muted">
-        Health Equity Advocacy Response Team — a student-led group advancing health equity through advocacy,
-        education, and community action.
+      <p class="footer-text">
+        Health Equity Advocacy Response Team — a York University student-led group advancing health equity through
+        advocacy, education, outreach, and community action.
       </p>
     </div>
 
-    <div class="footer-cols">
-      <div>
-        <div class="footer-head">Explore</div>
-        <a href="/about">About</a>
-        <a href="/events">Events</a>
-        <a href="/join">Join</a>
-      </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/join">Join</a></li>
+        <li><a href="/#get-involved">Get involved</a></li>
+      </ul>
+    </div>
 
-      <div>
-        <div class="footer-head">Contact</div>
-        <a href="mailto:heartyorku@gmail.com">heartyorku@gmail.com</a>
-        <a href="https://www.instagram.com/heart_yorku/" target="_blank" rel="noreferrer">Instagram: @heart_yorku</a>
-      </div>
+    <div>
+      <div class="footer-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:heartyorku@gmail.com">heartyorku@gmail.com</a></li>
+        <li><a href="https://instagram.com/heart_yorku" target="_blank" rel="noreferrer">Instagram: @heart_yorku</a></li>
+      </ul>
     </div>
   </div>
 
-  <div class="footer-bottom">
-    <div class="container footer-bottom-inner">
-      <span class="muted">© {new Date().getFullYear()} HEART — York University</span>
-      <span class="muted">Built with Astro + Cloudflare Pages</span>
-    </div>
+  <div class="container footer-bottom">
+    <span>© {year} HEART — York University</span>
+    <span class="footer-muted">Built with Astro + Cloudflare Pages</span>
   </div>
 </footer>
