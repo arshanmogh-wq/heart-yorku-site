@@ -2,93 +2,107 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="HEART – Health Equity Advocacy Response Team">
-  <div class="container page">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-art" aria-hidden="true">
-        <div class="blob blob--orange"></div>
-        <div class="blob blob--teal"></div>
-        <div class="blob blob--cream"></div>
-      </div>
-
-      <div class="hero-inner">
+<BaseLayout
+  title="HEART — Health Equity Advocacy Response Team"
+  description="HEART is a York University student-led group advancing health equity through advocacy, education, outreach, and community partnerships."
+>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
         <div>
-          <div class="kicker">York University • Student-led • Est. 2024</div>
+          <div class="hero-badge">York University • Student-led • Est. 2024</div>
 
-          <h1>
-            <span class="title-accent">HEART</span>
+          <h1 class="h1">
+            HEART <span class="accent">advocates</span> for health equity.
           </h1>
 
-          <h2>Health Equity Advocacy Response Team</h2>
-
-          <p>
-            HEART is a student-led organization advancing health equity by addressing
-            systemic, social, and economic barriers to health through advocacy, education,
-            outreach, and community partnerships.
+          <p class="lede">
+            HEART (Health Equity Advocacy Response Team) advances health equity by addressing systemic, social, and
+            economic barriers to health through advocacy, education, outreach, and community partnerships.
           </p>
 
-          <div class="actions">
-            <a class="btn btn--primary" href="/join">Get Involved</a>
-            <a class="btn btn--secondary" href="/about">Learn More</a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/join">Get Involved</a>
+            <a class="btn btn-secondary" href="/about">Learn More</a>
           </div>
         </div>
 
-        <div class="hero-logo">
-          <!-- LOGO IMAGE HERE -->
-          <img src="/images/heart-logo.png" alt="HEART logo" />
+        <div class="hero-logoCard">
+          <div class="logo-card">
+            <img src="/images/logo.png" alt="HEART logo" />
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- MISSION -->
-    <section class="section section--teal">
-      <h1 class="title-accent" style="font-size: 1.7rem; margin: 0 0 10px;">Mission</h1>
-      <p>
-        To advocate, educate, and act in response to health inequities by empowering communities,
-        supporting evidence-based initiatives, and fostering inclusive healthcare systems.
-      </p>
-    </section>
-
-    <!-- WHAT WE DO -->
-    <section class="section section--cream">
-      <h1 class="title-accent" style="font-size: 1.7rem; margin: 0 0 10px;">What We Do</h1>
-      <p>
-        We respond to inequities with ethical, inclusive, and community-centered action.
+  <section class="section">
+    <div class="container">
+      <h2 class="page-title">Our Mission</h2>
+      <p class="page-sub">
+        To advocate, educate, and act in response to health inequities by empowering communities and supporting inclusive,
+        evidence-based initiatives.
       </p>
 
-      <div class="grid">
-        <div class="card" data-accent="orange">
+      <div class="grid-3">
+        <div class="card">
+          <span class="card-kicker"></span>
           <h3>Advocacy</h3>
           <p>Raise awareness about health disparities and support equity-focused change.</p>
         </div>
-
-        <div class="card" data-accent="teal">
-          <h3>Community Engagement</h3>
-          <p>Volunteer, collaborate, and build partnerships that create real-world impact.</p>
-        </div>
-
-        <div class="card" data-accent="cream">
+        <div class="card">
+          <span class="card-kicker"></span>
           <h3>Education</h3>
-          <p>Workshops and evidence-based resources to combat misinformation and barriers.</p>
+          <p>Share evidence-based resources and promote accessible health learning.</p>
+        </div>
+        <div class="card">
+          <span class="card-kicker"></span>
+          <h3>Community Action</h3>
+          <p>Partner with organizations and volunteer to reduce barriers to care.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- GET INVOLVED -->
-    <section class="section">
-      <h1 class="title-accent" style="font-size: 1.7rem; margin: 0 0 10px;">Get Involved</h1>
-      <p>
-        Join HEART to take part in volunteering, outreach, advocacy campaigns, event planning, and
-        leadership opportunities.
+  <section class="section">
+    <div class="container">
+      <h2 class="page-title">What We Do</h2>
+      <p class="page-sub">HEART’s work focuses on real impact — grounded, inclusive, and student-driven.</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="card-kicker"></span>
+          <h3>Workshops</h3>
+          <p>Health education sessions and resource-sharing for community wellbeing.</p>
+        </div>
+        <div class="card">
+          <span class="card-kicker"></span>
+          <h3>Outreach</h3>
+          <p>Collaborations with local partners to support underserved communities.</p>
+        </div>
+        <div class="card">
+          <span class="card-kicker"></span>
+          <h3>Awareness Campaigns</h3>
+          <p>Initiatives that highlight inequities and promote inclusive systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-involved" class="section">
+    <div class="container surface" style="padding: 26px;">
+      <h2 class="page-title">Get Involved</h2>
+      <p class="page-sub">
+        HEART welcomes students from all disciplines — public health, nursing, psychology, policy, sciences, arts, and more.
       </p>
 
-      <div class="actions">
-        <a class="btn btn--primary" href="/join">Join HEART</a>
-        <a class="btn btn--secondary" href="/events">See Events</a>
+      <div class="hero-actions" style="margin-top: 8px;">
+        <a class="btn btn-primary" href="/join">Join HEART</a>
+        <a class="btn btn-secondary" href="/events">View Events</a>
+        <a class="btn btn-secondary" href="https://instagram.com/heart_yorku" target="_blank" rel="noreferrer">
+          Follow @heart_yorku
+        </a>
       </div>
-    </section>
-
-  </div>
+    </div>
+  </section>
 </BaseLayout>
