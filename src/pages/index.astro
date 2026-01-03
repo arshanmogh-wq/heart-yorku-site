@@ -1,115 +1,50 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout
-  title="HEART – Health Equity Advocacy Response Team"
-  description="HEART is a student-led organization advancing health equity through advocacy, education, and community-centered action."
->
+<Nav />
+
+<main class="container">
+
+  <!-- HERO SECTION -->
   <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="badge">York University • Student-led • Est. 2024</span>
-        <h1>
-          Advancing <span class="accent">health equity</span>
-          through advocacy, education, and community action.
-        </h1>
-        <p>
-          HEART (Health Equity Advocacy Response Team) is dedicated to reducing unfair differences in health
-          caused by social, economic, and systemic barriers. We work with communities, not over them —
-          prioritizing ethical, inclusive, and evidence-based action.
-        </p>
+    <div class="hero-text">
+      <div class="badge">York University • Student-Led • Est. 2024</div>
 
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="/join">Join HEART</a>
-          <a class="btn btn-outline" href="/about">Learn more</a>
-        </div>
+      <h1>
+        <span class="blue">H</span><span class="orange">E</span><span class="blue">A</span><span class="orange">R</span><span class="blue">T</span>
+      </h1>
 
-        <div class="kpi" aria-label="Highlights">
-          <span class="pill"><b>Advocacy</b> • equity-focused action</span>
-          <span class="pill"><b>Education</b> • workshops & resources</span>
-          <span class="pill"><b>Engagement</b> • community partnerships</span>
-        </div>
-      </div>
+      <h2>Health Equity Advocacy Response Team</h2>
 
-      <aside class="hero-card">
-        <img src="/images/heart-logo.png" alt="HEART logo" />
-        <div class="callout">
-          <strong>Get involved:</strong> Volunteer, help plan events, support outreach, or join the executive team.
-          <div class="muted" style="margin-top:6px;">
-            Email: <a href="mailto:heartyorku@gmail.com">heartyorku@gmail.com</a>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>Mission</h2>
-      <p class="lead">
-        To <b>advocate, educate, and act</b> in response to health inequities by empowering communities,
-        supporting evidence-based initiatives, and fostering inclusive healthcare systems.
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>What We Do</h2>
-      <p class="lead">Four pillars guide our work across campus and the community.</p>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3><span class="accent">1.</span> Advocacy</h3>
-          <p>Raise awareness about health disparities and support equity-focused policies and initiatives.</p>
-        </div>
-
-        <div class="card">
-          <h3><span class="accent">2.</span> Community Engagement</h3>
-          <p>Volunteer with local organizations and collaborate with partners on outreach projects.</p>
-        </div>
-
-        <div class="card">
-          <h3><span class="accent">3.</span> Education</h3>
-          <p>Workshops, evidence-based resources, and clear communication to reduce misinformation.</p>
-        </div>
-
-        <div class="card">
-          <h3><span class="accent">4.</span> Research & Awareness</h3>
-          <p>Support ethical student-led research and spotlight inequities through data and storytelling.</p>
-        </div>
-
-        <div class="card">
-          <h3><span class="accent">Who we serve</span></h3>
-          <p>Underserved and marginalized communities, newcomers, and anyone facing barriers to care.</p>
-        </div>
-
-        <div class="card">
-          <h3><span class="accent">Values</span></h3>
-          <p>Equity • Inclusion • Integrity • Collaboration • Empowerment</p>
-        </div>
-      </div>
-
-      <div class="callout">
-        <strong>Why HEART matters:</strong> Health disparities are not accidental — they are the result of systemic inequities.
-        HEART responds intentionally by turning awareness into action and advocacy into impact.
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>Get Involved</h2>
-      <p class="lead">
-        HEART welcomes students from all disciplines who care about social justice, healthcare, public health,
-        and community service.
+      <p>
+        HEART is a student-led organization advancing health equity by addressing
+        systemic, social, and economic barriers to health.
       </p>
 
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="/join">Join as a member</a>
-        <a class="btn btn-outline" href="/events">See events</a>
+      <div class="buttons">
+        <a href="/join" class="btn primary">Join HEART</a>
+        <a href="/about" class="btn secondary">Learn More</a>
       </div>
     </div>
+
+    <!-- LOGO PLACEMENT -->
+    <div class="hero-logo">
+      <img src="/images/heart-logo.png" alt="HEART Logo" />
+    </div>
   </section>
-</BaseLayout>
+
+  <!-- MISSION -->
+  <section class="section">
+    <h3>Our Mission</h3>
+    <p>
+      To advocate, educate, and act in response to health inequities by empowering
+      communities and supporting inclusive, evidence-based healthcare initiatives.
+    </p>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="section grid">
+    <div class="card">
