@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 
 const {
   title = "HEART – Health Equity Advocacy Response Team",
-  description = "HEART is a student-led organization advancing health equity through advocacy, education, and community-centered action.",
+  description = "HEART is a student-led organization advancing health equity through advocacy, education, and community-centered action."
 } = Astro.props;
 ---
 
@@ -14,16 +14,12 @@ const {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
     <meta name="description" content={description} />
+    <title>{title}</title>
   </head>
-
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
     <Nav />
-    <main id="main">
-      <slot />
-    </main>
+    <slot />
     <Footer />
   </body>
 </html>
