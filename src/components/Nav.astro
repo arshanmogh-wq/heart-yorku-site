@@ -1,34 +1,33 @@
 ---
-const current = (Astro.url.pathname.replace(/\/$/, "") || "/");
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/join", label: "Join" },
   { href: "/events", label: "Events" },
+  { href: "/#get-involved", label: "Get involved" },
 ];
 
-function isActive(href) {
-  const clean = (href.replace(/\/$/, "") || "/");
-  return clean === current;
-}
+const path = Astro.url.pathname;
+const isActive = (href) => (href === "/" ? path === "/" : path.startsWith(href.replace("/#", "/")));
 ---
 
 <header class="site-header">
-  <div class="site-header__inner">
-    <a class="brand" href="/">
-      <img class="brand__logo" src="/images/heart-logo.png" alt="HEART logo" />
-      <div>
-        <div class="brand__name">HEART</div>
-        <span class="brand__tag">Health Equity Advocacy Response Team</span>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="HEART home">
+      <img class="brand-logo" src="/images/logo.png" alt="HEART logo" loading="eager" />
+      <div class="brand-text">
+        <span class="brand-name">HEART</span>
+        <span class="brand-sub">Health Equity Advocacy Response Team</span>
       </div>
     </a>
 
     <nav class="site-nav" aria-label="Primary navigation">
       {links.map((l) => (
-        <a class={"site-nav__link" + (isActive(l.href) ? " is-active" : "")} href={l.href}>
+        <a class:list={["nav-link", isActive(l.href) && "active"]} href={l.href}>
           {l.label}
         </a>
       ))}
+      <a class="nav-cta" href="/join">Join</a>
     </nav>
   </div>
 </header>
