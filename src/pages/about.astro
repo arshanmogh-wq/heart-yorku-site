@@ -2,47 +2,82 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="About HEART">
-  <section class="section">
-    <div class="container surface" style="padding: 26px;">
-      <h1 class="page-title">About HEART</h1>
-      <p class="page-sub">
-        HEART (Health Equity Advocacy Response Team) is a student-led organization dedicated to advancing <b>health equity</b>
-        by addressing systemic, social, and economic barriers that prevent individuals and communities from achieving optimal health.
-      </p>
+<BaseLayout title="About | HEART">
+  <div class="page">
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">About HEART</h1>
+        <p class="page-intro">
+          HEART (Health Equity Advocacy Response Team) is a student-led organization dedicated to advancing
+          <strong> health equity</strong> by addressing systemic, social, and economic barriers that prevent individuals
+          and communities from achieving optimal health.
+        </p>
+      </div>
+    </section>
 
-      <div class="grid-3">
-        <div class="card">
-          <span class="card-kicker"></span>
-          <h3>Our Vision</h3>
-          <p>A world where every individual—regardless of background—has equal opportunity to achieve optimal health.</p>
+    <section class="section">
+      <div class="container">
+        <div class="cards cards-3">
+          <div class="card">
+            <div class="card-accent"></div>
+            <h3>Our Vision</h3>
+            <p>A world where every individual—regardless of background—has equal opportunity to achieve optimal health.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-accent"></div>
+            <h3>Our Mission</h3>
+            <p>Advocate, educate, and act in response to health inequities through community-centered initiatives.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-accent"></div>
+            <h3>What is Health Equity?</h3>
+            <p>Ensuring everyone has a fair and just opportunity to be as healthy as possible by removing barriers.</p>
+          </div>
         </div>
 
-        <div class="card">
-          <span class="card-kicker"></span>
-          <h3>Our Mission</h3>
-          <p>Advocate, educate, and act in response to health inequities through community-centered initiatives.</p>
-        </div>
+        <p class="section-lead" style="margin-top: 18px;">
+          <strong>Barriers we address:</strong> poverty, discrimination, access gaps, language barriers, educational gaps, and more.
+        </p>
 
-        <div class="card">
-          <span class="card-kicker"></span>
-          <h3>Our Values</h3>
-          <p>Equity, inclusion, integrity, collaboration, and empowerment—evidence-based and ethically grounded.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/join">Join HEART</a>
+          <a class="button button-secondary" href="/events">View events</a>
         </div>
       </div>
+    </section>
 
-      <div class="hr"></div>
+    <section class="section section-muted">
+      <div class="container">
+        <h2 class="section-title">Our Values</h2>
 
-      <h2 style="margin: 0 0 10px; color: var(--navy);">What is Health Equity?</h2>
-      <p style="margin:0; color: var(--muted); font-size: 1.05rem;">
-        Health equity means ensuring everyone has a fair and just opportunity to be as healthy as possible by removing barriers like
-        poverty, discrimination, access gaps, language barriers, and educational inequities.
-      </p>
+        <div class="cards cards-2">
+          <div class="card">
+            <div class="card-accent"></div>
+            <h3>Equity</h3>
+            <p>Fairness and justice in access to health resources, education, and care.</p>
+          </div>
 
-      <div class="hero-actions" style="margin-top: 18px;">
-        <a class="btn btn-primary" href="/join">Join HEART</a>
-        <a class="btn btn-secondary" href="/events">View events</a>
+          <div class="card">
+            <div class="card-accent"></div>
+            <h3>Inclusion</h3>
+            <p>Respect for all identities, backgrounds, and lived experiences.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-accent"></div>
+            <h3>Integrity</h3>
+            <p>Ethical, evidence-based action and responsible community partnerships.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-accent"></div>
+            <h3>Collaboration</h3>
+            <p>Working with communities, not over them—listening first, acting with care.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </BaseLayout>
