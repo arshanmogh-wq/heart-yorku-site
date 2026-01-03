@@ -2,17 +2,41 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="HEART — Health Equity Advocacy Response Team">
-  <h1>HEART</h1>
-  <h2>Health Equity Advocacy Response Team</h2>
+<BaseLayout>
+  <section class="container section">
+    <h1>HEART</h1>
+    <p style="font-size:1.2rem; max-width:700px;">
+      Health Equity Advocacy Response Team is a student-led organization
+      dedicated to advancing health equity through advocacy, education,
+      and community engagement.
+    </p>
+    <button onclick="location.href='/join'">Join HEART</button>
+  </section>
 
-  <p>
-    HEART is a student-led organization dedicated to advancing health equity by
-    addressing systemic, social, and economic barriers to health.
-  </p>
+  <section class="container section">
+    <h2>Our Mission</h2>
+    <p>
+      To advocate, educate, and act in response to health inequities by
+      empowering communities and supporting inclusive, evidence-based
+      healthcare initiatives.
+    </p>
+  </section>
 
-  <p>
-    We advocate for underserved and marginalized communities through education,
-    outreach, volunteering, and evidence-based action.
-  </p>
+  <section class="container section">
+    <h2>What We Do</h2>
+    <ul>
+      <li><strong>Advocacy:</strong> Raise awareness and promote equity-focused policy</li>
+      <li><strong>Education:</strong> Workshops, outreach, and health literacy</li>
+      <li><strong>Community Engagement:</strong> Volunteering and partnerships</li>
+    </ul>
+  </section>
+
+  <section class="container section">
+    <h2>Get Involved</h2>
+    <p>
+      HEART welcomes students from all disciplines passionate about
+      social justice, healthcare, and community service.
+    </p>
+    <button onclick="location.href='/join'">Get Involved</button>
+  </section>
 </BaseLayout>
