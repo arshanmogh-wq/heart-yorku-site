@@ -1,12 +1,27 @@
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="brand" href="/">HEART</a>
+---
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/join", label: "Join" },
+  { href: "/events", label: "Events" },
+];
+const path = Astro.url.pathname;
+---
 
-    <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/join">Join</a>
-      <a href="/events">Events</a>
-    </div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="HEART Home">
+      <span class="brand-mark">HEART</span>
+      <span class="brand-sub">Health Equity Advocacy Response Team</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      {links.map((l) => (
+        <a class:list={["nav-link", path === l.href ? "active" : ""]} href={l.href}>
+          {l.label}
+        </a>
+      ))}
+      <a class="btn btn-sm btn-primary" href="/join">Get involved</a>
+    </nav>
   </div>
-</nav>
+</header>
