@@ -477,3 +477,135 @@ strong{ color: rgba(11,34,57,0.95); }
   .nav{ order: 3; width: 100%; }
   .nav-list{ justify-content: flex-start; flex-wrap: wrap; }
 }
+
+
+/* =========================================
+   HAMBURGER MENU BUTTON
+   ========================================= */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  gap: 5px;
+  z-index: 1000;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2.5px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* =========================================
+   MOBILE MENU STYLES (max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  /* 1. Show hamburger menu button */
+  .menu-toggle {
+    display: flex;
+    order: 2;
+  }
+
+  /* 2. Restructure header layout for mobile */
+  .header-inner {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    gap: 12px;
+  }
+
+  /* 3. Brand styling for mobile */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: auto;
+    flex-basis: auto;
+    order: 1;
+  }
+
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  /* 4. Navigation dropdown menu */
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    order: 4;
+  }
+
+  .nav.is-open {
+    max-height: 400px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    padding: 12px 0;
+    margin: 0;
+  }
+
+  /* 5. Navigation links styling */
+  .nav-list li {
+    list-style: none;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 0;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link:hover {
+    background: rgba(43, 183, 193, 0.08);
+  }
+
+  .nav-link.is-active {
+    background: var(--orange-200);
+    box-shadow: inset 1px 0 0 0 rgba(243, 154, 61, 0.35);
+  }
+
+  /* 6. Join button positioning */
+  .header-cta {
+    order: 3;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+}

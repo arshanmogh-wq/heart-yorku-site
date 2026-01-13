@@ -18,6 +18,12 @@ const isActive = (href) => (href === "/" ? pathname === "/" : pathname === href)
       </div>
     </a>
 
+    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <nav class="nav" aria-label="Primary navigation">
       <ul class="nav-list">
         <li>
@@ -40,3 +46,24 @@ const isActive = (href) => (href === "/" ? pathname === "/" : pathname === href)
     </a>
   </div>
 </header>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // Toggle menu
+  menuToggle?.addEventListener('click', () => {
+    nav?.classList.toggle('is-open');
+    const isOpen = nav?.classList.contains('is-open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Close menu when a link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      nav?.classList.remove('is-open');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
