@@ -1,16 +1,16 @@
 :root{
-  --navy: #0B2239;
-  --text: rgba(11,34,57,0.92);
-  --muted: rgba(11,34,57,0.70);
+  --navy: #1a1a1a;
+  --text: rgba(26,26,26,0.92);
+  --muted: rgba(26,26,26,0.70);
 
-  --blue-700: #0E5A8A;
-  --blue-500: #2BB7C1;
+  --blue-700: #57ced4;
+  --blue-500: #57ced4;
 
-  --orange-600: #F39A3D;
-  --orange-200: rgba(243,154,61,0.18);
+  --orange-600: #ff904e;
+  --orange-200: rgba(255,144,78,0.18);
 
-  --border: rgba(11,34,57,0.12);
-  --shadow: 0 18px 50px rgba(11,34,57,0.10);
+  --border: rgba(26,26,26,0.12);
+  --shadow: 0 18px 50px rgba(26,26,26,0.10);
 
   --radius-lg: 20px;
   --radius-md: 14px;
@@ -23,13 +23,13 @@ body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--text);
   background:
-    radial-gradient(900px circle at 20% 10%, rgba(43,183,193,0.12), transparent 55%),
-    radial-gradient(900px circle at 85% 30%, rgba(243,154,61,0.12), transparent 55%),
+    radial-gradient(900px circle at 20% 10%, rgba(87,206,212,0.12), transparent 55%),
+    radial-gradient(900px circle at 85% 30%, rgba(255,189,89,0.12), transparent 55%),
     #F7FBFF;
 }
 
 a{ color: inherit; }
-strong{ color: rgba(11,34,57,0.95); }
+strong{ color: rgba(26,26,26,0.95); }
 
 .container{
   max-width: var(--container);
@@ -120,11 +120,11 @@ strong{ color: rgba(11,34,57,0.95); }
   font-weight: 700;
 }
 .nav-link:hover{
-  background: rgba(43,183,193,0.12);
+  background: rgba(87,206,212,0.12);
 }
 .nav-link.is-active{
   background: var(--orange-200);
-  box-shadow: inset 0 0 0 1px rgba(243,154,61,0.35);
+  box-shadow: inset 0 0 0 1px rgba(255,144,78,0.35);
 }
 
 .button{
@@ -140,13 +140,13 @@ strong{ color: rgba(11,34,57,0.95); }
 .button-primary{
   background: var(--orange-600);
   color: var(--navy);
-  border-color: rgba(11,34,57,0.18);
-  box-shadow: 0 10px 20px rgba(243,154,61,0.25);
+  border-color: rgba(26,26,26,0.18);
+  box-shadow: 0 10px 20px rgba(255,144,78,0.25);
 }
 .button-primary:hover{ filter: brightness(0.985); }
 .button-secondary{
-  background: rgba(43,183,193,0.10);
-  border-color: rgba(43,183,193,0.35);
+  background: rgba(87,206,212,0.10);
+  border-color: rgba(87,206,212,0.35);
 }
 .button-tertiary{
   background: white;
@@ -154,7 +154,7 @@ strong{ color: rgba(11,34,57,0.95); }
 }
 
 .header-cta.is-active-cta{
-  box-shadow: 0 0 0 3px rgba(43,183,193,0.25), 0 10px 20px rgba(243,154,61,0.20);
+  box-shadow: 0 0 0 3px rgba(87,206,212,0.25), 0 10px 20px rgba(255,144,78,0.20);
 }
 
 /* Page + sections */
@@ -162,9 +162,9 @@ strong{ color: rgba(11,34,57,0.95); }
 
 .section{ padding: 42px 0; }
 .section-muted{
-  background: rgba(255,255,255,0.56);
-  border-top: 1px solid rgba(11,34,57,0.06);
-  border-bottom: 1px solid rgba(11,34,57,0.06);
+  background: transparent; /* CUSTOMIZE: Background removed - was rgba(255,255,255,0.56) */
+  border-top: 1px solid rgba(26,26,26,0.12); /* CUSTOMIZE: Increased opacity from 0.06 for more visibility */
+  border-bottom: 1px solid rgba(26,26,26,0.12); /* CUSTOMIZE: Increased opacity from 0.06 for more visibility */
 }
 .section-title{
   font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -186,7 +186,7 @@ strong{ color: rgba(11,34,57,0.95); }
 }
 .section-lead{
   margin: 0 0 22px;
-  color: var(--muted);
+  color: rgba(26,26,26,0.80); /* CUSTOMIZE: Increased opacity from 0.70 (var(--muted)) for better text visibility */
   max-width: 78ch;
 }
 
@@ -205,9 +205,9 @@ strong{ color: rgba(11,34,57,0.95); }
   position:absolute;
   inset:-140px;
   background:
-    radial-gradient(520px circle at 12% 78%, rgba(43,183,193,0.55), transparent 62%),
-    radial-gradient(540px circle at 92% 18%, rgba(243,154,61,0.45), transparent 62%),
-    radial-gradient(420px circle at 64% 56%, rgba(11,34,57,0.07), transparent 60%);
+    radial-gradient(520px circle at 12% 78%, rgba(87,206,212,0.55), transparent 62%),
+    radial-gradient(540px circle at 92% 18%, rgba(255,189,89,0.45), transparent 62%),
+    radial-gradient(420px circle at 64% 56%, rgba(26,26,26,0.07), transparent 60%);
   pointer-events:none;
   z-index: 0;
 }
@@ -219,7 +219,7 @@ strong{ color: rgba(11,34,57,0.95); }
   right: 120px;
   top: -130px;
   border-radius: 999px;
-  border: 6px solid rgba(11,34,57,0.10);
+  border: 6px solid rgba(26,26,26,0.10);
   background: rgba(255,255,255,0.30);
   pointer-events:none;
   z-index: 0;
@@ -236,12 +236,12 @@ strong{ color: rgba(11,34,57,0.95); }
   display:inline-flex;
   gap: 10px;
   align-items:center;
-  background: rgba(43,183,193,0.18);
-  border: 1px solid rgba(43,183,193,0.35);
+  background: rgba(87,206,212,0.18);
+  border: 1px solid rgba(87,206,212,0.35);
   padding: 10px 12px;
   border-radius: 999px;
   font-weight: 900;
-  color: rgba(11,34,57,0.82);
+  color: rgba(26,26,26,0.82);
 }
 .hero-title{
   margin: 16px 0 10px;
@@ -280,7 +280,7 @@ strong{ color: rgba(11,34,57,0.95); }
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 16px;
-  box-shadow: 0 18px 45px rgba(11,34,57,0.12);
+  box-shadow: 0 18px 45px rgba(26,26,26,0.12);
 }
 .logo-card img{
   width: 100%;
@@ -288,7 +288,7 @@ strong{ color: rgba(11,34,57,0.95); }
   display:block;
   border-radius: 14px;
   background: white;
-  border: 1px solid rgba(11,34,57,0.12);
+  border: 1px solid rgba(26,26,26,0.12);
 }
 .logo-card-caption{
   display:flex;
@@ -305,12 +305,12 @@ strong{ color: rgba(11,34,57,0.95); }
   background: white;
 }
 .chip-blue{
-  border-color: rgba(43,183,193,0.50);
-  background: rgba(43,183,193,0.12);
+  border-color: rgba(87,206,212,0.50);
+  background: rgba(87,206,212,0.12);
 }
 .chip-orange{
-  border-color: rgba(243,154,61,0.55);
-  background: rgba(243,154,61,0.12);
+  border-color: rgba(255,189,89,0.55);
+  background: rgba(255,189,89,0.12);
 }
 .hero-note{
   align-self: stretch;
@@ -336,7 +336,7 @@ strong{ color: rgba(11,34,57,0.95); }
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 18px;
-  box-shadow: 0 12px 30px rgba(11,34,57,0.08);
+  box-shadow: 0 12px 30px rgba(26,26,26,0.08);
   position:relative;
   overflow:hidden;
 }
@@ -393,7 +393,7 @@ strong{ color: rgba(11,34,57,0.95); }
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow:hidden;
-  box-shadow: 0 18px 40px rgba(11,34,57,0.08);
+  box-shadow: 0 18px 40px rgba(26,26,26,0.08);
 }
 .form-embed iframe{
   width: 100%;
@@ -482,37 +482,60 @@ strong{ color: rgba(11,34,57,0.95); }
 /* =========================================
    HAMBURGER MENU BUTTON
    ========================================= */
+/* Container for hamburger button and menu label */
+.menu-toggle-group {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px; /* CUSTOMIZE: Adjust spacing between hamburger icon and "Menu" text */
+  order: 2;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
+  width: 50px; /* CUSTOMIZE: Hamburger button width */
+  height: 50px; /* CUSTOMIZE: Hamburger button height */
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
-  gap: 5px;
+  gap: 5px; /* CUSTOMIZE: Gap between hamburger lines */
   z-index: 1000;
+  flex-shrink: 0;
 }
 
 .menu-toggle span {
-  width: 24px;
-  height: 2.5px;
+  width: 24px; /* CUSTOMIZE: Width of hamburger lines */
+  height: 2.5px; /* CUSTOMIZE: Thickness of hamburger lines */
   background: var(--navy);
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+
+/* Menu label/title text that appears next to hamburger icon */
+.menu-label {
+  font-weight: 700;
+  font-size: 0.95rem; /* CUSTOMIZE: Font size of "Menu" text */
+  color: var(--navy);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* CUSTOMIZE: Letter spacing for menu label */
 }
 
 /* =========================================
    MOBILE MENU STYLES (max-width: 768px)
    ========================================= */
 @media (max-width: 768px) {
-  /* 1. Show hamburger menu button */
+  /* 1. Show hamburger menu button with label */
+  .menu-toggle-group {
+    display: flex;
+  }
+
   .menu-toggle {
     display: flex;
-    order: 2;
   }
 
   /* 2. Restructure header layout for mobile */
@@ -520,23 +543,24 @@ strong{ color: rgba(11,34,57,0.95); }
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
+    padding: 12px 16px; /* CUSTOMIZE: Adjust padding - first value is top/bottom, second is left/right corners */
     gap: 12px;
   }
 
-  /* 3. Brand styling for mobile */
+  /* 3. Brand styling for mobile - CUSTOMIZABLE LOGO SECTION */
   .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px; /* CUSTOMIZE: Space between logo and brand text */
     min-width: auto;
     flex-basis: auto;
     order: 1;
   }
 
   .brand-logo {
-    width: 36px;
-    height: 36px;
+    width: 48px; /* CUSTOMIZE: Logo width (increased from 36px) */
+    height: 48px; /* CUSTOMIZE: Logo height (increased from 36px) */
+    flex-shrink: 0; /* Prevents logo from shrinking */
   }
 
   .brand-text {
@@ -577,7 +601,6 @@ strong{ color: rgba(11,34,57,0.95); }
   .nav-list li {
     list-style: none;
   }
-
   .nav-link {
     display: flex;
     align-items: center;
@@ -594,12 +617,12 @@ strong{ color: rgba(11,34,57,0.95); }
   }
 
   .nav-link:hover {
-    background: rgba(43, 183, 193, 0.08);
+    background: rgba(87, 206, 212, 0.08);
   }
 
   .nav-link.is-active {
     background: var(--orange-200);
-    box-shadow: inset 1px 0 0 0 rgba(243, 154, 61, 0.35);
+    box-shadow: inset 1px 0 0 0 rgba(255, 144, 78, 0.35);
   }
 
   /* 6. Join button positioning */
@@ -607,5 +630,14 @@ strong{ color: rgba(11,34,57,0.95); }
     order: 3;
     padding: 10px 12px;
     font-size: 0.9rem;
+  }
+
+  /* 7. Footer spacing on mobile - CUSTOMIZABLE */
+  .footer-grid {
+    padding: 34px 16px 22px; /* CUSTOMIZE: Add left/right padding (16px) for corner space on mobile */
+  }
+
+  .footer-bottom {
+    padding: 16px 16px 22px; /* CUSTOMIZE: Add left/right padding (16px) for corner space on mobile */
   }
 }
