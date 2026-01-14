@@ -191,7 +191,7 @@ strong{ color: rgba(26,26,26,0.95); }
 }
 
 /* Hero */
-.hero{ padding: 22px 0 6px; }
+.hero{ padding: 20px 0 6px; }
 .hero-surface{
   position:relative;
   overflow:hidden;
@@ -340,16 +340,7 @@ strong{ color: rgba(26,26,26,0.95); }
   position:relative;
   overflow:hidden;
 }
-.card-accent{
-  position:absolute;
-  left:16px;
-  top:16px;
-  width: 72px;
-  height: 8px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--blue-500), var(--orange-600));
-}
-.card h3{ margin: 18px 0 8px; font-size: 1.15rem; }
+.card h3{ margin: 0 0 8px; font-size: 1.15rem; }
 .card p{ margin: 0; color: var(--muted); }
 
 /* Page header */
@@ -381,9 +372,9 @@ strong{ color: rgba(26,26,26,0.95); }
 .cta-lead{ margin:0; color: var(--muted); max-width: 72ch; }
 .cta-actions{
   display:flex;
+  flex-direction: column;
   gap: 12px;
-  flex-wrap: wrap;
-  align-items:center;
+  align-items:flex-start;
 }
 
 /* Google Form embed */
