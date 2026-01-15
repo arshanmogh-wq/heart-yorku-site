@@ -632,7 +632,8 @@ strong{ color: rgba(26,26,26,0.95); }
     padding: 34px 16px 22px; /* CUSTOMIZE: Add left/right padding (16px) for corner space on mobile */
   }
 
-  .footer-bottom {
-    padding: 16px 16px 22px; /* CUSTOMIZE: Add left/right padding (16px) for corner space on mobile */
+.footer-bottom {
+    padding: 16px 16px 22px; 
   }
-}
+} 
+/* End of file */
