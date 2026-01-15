@@ -192,6 +192,7 @@ strong{ color: rgba(26,26,26,0.95); }
 
 /* Hero */
 .hero{ padding: 20px 0 6px; }
+/*
 .hero-surface{
   position:relative;
   overflow:hidden;
@@ -200,6 +201,7 @@ strong{ color: rgba(26,26,26,0.95); }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
 }
+
 .hero-surface::before{
   content:"";
   position:absolute;
@@ -224,6 +226,8 @@ strong{ color: rgba(26,26,26,0.95); }
   pointer-events:none;
   z-index: 0;
 }
+*/
+
 .hero-grid{
   position:relative;
   z-index: 1;
