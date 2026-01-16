@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Join | HEART">
+  <div class="page">
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Join HEART</h1>
+        <p class="page-intro">
+          HEART welcomes students from all disciplines who are passionate about health equity, social justice,
+          and community service. Get involved through volunteering, outreach, education, and advocacy.
+        </p>
+
+        <div class="hero-actions" style="margin-top: 14px;">
+          <a class="button button-primary" href="#application">Apply now</a>
+          <a class="button button-secondary" href="/about">Learn about HEART</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <h2 class="section-title">What you can do</h2>
+
+        <div class="cards cards-3">
+          <div class="card">
+            <div class="card-accent"></div>
+            <h3>Volunteer & outreach</h3>
+            <p>Support community partners and help reduce barriers to care through outreach initiatives.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-accent"></div>
+            <h3>Education & resources</h3>
+            <p>Help create and share evidence-based resources that are accessible and inclusive.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-accent"></div>
+            <h3>Advocacy & campaigns</h3>
+            <p>Contribute to awareness campaigns that highlight inequities and promote change.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="application">
+      <div class="container">
+        <h2 class="section-title">Application</h2>
+        <p class="section-lead">
+          Fill out the form below to join. If the embed doesn’t load, open the form in a new tab.
+        </p>
+
+        <!-- Replace YOUR_FORM_ID with your actual Google Form ID -->
+        <div class="hero-actions">
+          <a
+            class="button button-secondary"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe7ovKtnT5WIpPmU920JeTv8WpCcDoNra5Sona9ExodDW6VVA/viewform?pli=1"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open form in a new tab
+          </a>
+        </div>
+
+        <div class="form-embed">
+          <iframe
+            title="HEART membership form"
+            src="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe7ovKtnT5WIpPmU920JeTv8WpCcDoNra5Sona9ExodDW6VVA/viewform?usp=send_form&pli=1&authuser=0"
+            loading="lazy"
+          >
+            Loading…
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <div class="cta-slab">
+          <div>
+            <h2 class="cta-title">Questions?</h2>
+            <p class="cta-lead">
+              Email us at <a href="mailto:heartyorku@gmail.com">heartyorku@gmail.com</a>
+              or message us on Instagram
+              <a href="https://www.instagram.com/heart_yorku" target="_blank" rel="noreferrer">@heart_yorku</a>.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="button button-primary" href="mailto:heartyorku@gmail.com">Email</a>
+            <a class="button button-secondary" href="https://www.instagram.com/heart_yorku" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,69 @@
+---
+const pathname = Astro.url.pathname;
+const isActive = (href) => (href === "/" ? pathname === "/" : pathname === href);
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="HEART home">
+      <img
+        class="brand-logo"
+        src="/images/heart-logo.png"
+        alt="HEART logo"
+        loading="eager"
+      />
+      <div class="brand-text">
+        <span class="brand-name">HEART</span>
+        <span class="brand-subtitle">Health Equity Advocacy Response Team</span>
+      </div>
+    </a>
+
+    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <ul class="nav-list">
+        <li>
+          <a class={`nav-link ${isActive("/") ? "is-active" : ""}`} href="/">Home</a>
+        </li>
+        <li>
+          <a class={`nav-link ${isActive("/about") ? "is-active" : ""}`} href="/about">About</a>
+        </li>
+        <li>
+          <a class={`nav-link ${isActive("/events") ? "is-active" : ""}`} href="/events">Events</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/#get-involved">Get involved</a>
+        </li>
+      </ul>
+    </nav>
+
+    <a class={`button button-primary header-cta ${isActive("/join") ? "is-active-cta" : ""}`} href="/join">
+      Join
+    </a>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // Toggle menu
+  menuToggle?.addEventListener('click', () => {
+    nav?.classList.toggle('is-open');
+    const isOpen = nav?.classList.contains('is-open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Close menu when a link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      nav?.classList.remove('is-open');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
