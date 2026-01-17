@@ -174,6 +174,8 @@ strong{ color: rgba(26,26,26,0.95); }
   position:relative;
   padding-bottom: 8px;
 }
+
+/* Accent underline for section titles - disabled for cleaner look
 .section-title::after{
   content:"";
   position:absolute;
@@ -184,6 +186,7 @@ strong{ color: rgba(26,26,26,0.95); }
   border-radius: 999px;
   background: linear-gradient(90deg, var(--blue-500), var(--orange-600));
 }
+*/
 .section-lead{
   margin: 0 0 22px;
   color: rgba(26,26,26,0.80); /* CUSTOMIZE: Increased opacity from 0.70 (var(--muted)) for better text visibility */
