@@ -16,7 +16,6 @@ const {
 } = Astro.props;
 
 // Canonical URL
-// Canonical URL
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
 
 // Social Image URL (ensures absolute path)
@@ -50,7 +49,7 @@ const socialImageURL = new URL(image, Astro.url);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImageURL} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/images/heart-logo.png" />
     <meta name="theme-color" content="#0B2239" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
