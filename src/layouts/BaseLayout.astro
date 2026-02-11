@@ -12,7 +12,7 @@ export interface Props {
 const {
   title = "HEART — Health Equity Advocacy Response Team",
   description = "HEART (Health Equity Advocacy Response Team) is a York University student-led organization advancing health equity through advocacy, education, outreach, and community partnerships.",
-  image = "/images/heart-logo.png",
+  image = "/favicon.png",
 } = Astro.props;
 
 // Canonical URL
@@ -49,7 +49,7 @@ const socialImageURL = new URL(image, Astro.url);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImageURL} />
 
-    <link rel="icon" type="image/png" href="/images/heart-logo.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="theme-color" content="#0B2239" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
