@@ -21,6 +21,7 @@ const siteURL = new URL(Astro.site ?? Astro.url.origin);
 const canonicalURL = new URL(Astro.url.pathname, siteURL);
 const socialImageURL = new URL(image, siteURL);
 const robots = noindex ? "noindex, nofollow" : "index, follow";
+const isHomePage = Astro.url.pathname === "/";
 const organizationJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -30,6 +31,13 @@ const organizationJsonLd = JSON.stringify({
   logo: new URL("/images/heart-logo.png", siteURL).toString(),
   email: "heartyorku@gmail.com",
   sameAs: ["https://www.instagram.com/heart_yorku"],
+});
+const websiteJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "HEART",
+  alternateName: "Health Equity Advocacy Response Team",
+  url: siteURL.toString(),
 });
 ---
 
@@ -73,6 +81,7 @@ const organizationJsonLd = JSON.stringify({
       rel="stylesheet"
     />
     <script type="application/ld+json" set:html={organizationJsonLd}></script>
+    {isHomePage && <script type="application/ld+json" set:html={websiteJsonLd}></script>}
   </head>
 
   <body>
