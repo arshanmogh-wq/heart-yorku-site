@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://heart-yorku-site.pages.dev/sitemap-index.xml

@@ -1,6 +1,15 @@
 ---
-const pathname = Astro.url.pathname;
-const isActive = (href) => (href === "/" ? pathname === "/" : pathname === href);
+const normalizePath = (value) => {
+  if (!value || value === "/") {
+    return "/";
+  }
+
+  return value.endsWith("/") ? value.slice(0, -1) : value;
+};
+
+const pathname = normalizePath(Astro.url.pathname);
+const isActive = (href) => normalizePath(href) === pathname;
+const navId = "primary-navigation";
 ---
 
 <header class="site-header">
@@ -18,22 +27,46 @@ const isActive = (href) => (href === "/" ? pathname === "/" : pathname === href)
       </div>
     </a>
 
-    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls={navId}
+    >
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <nav class="nav" aria-label="Primary navigation">
+    <nav id={navId} class="nav" aria-label="Primary navigation">
       <ul class="nav-list">
         <li>
-          <a class={`nav-link ${isActive("/") ? "is-active" : ""}`} href="/">Home</a>
+          <a
+            class={`nav-link ${isActive("/") ? "is-active" : ""}`}
+            href="/"
+            aria-current={isActive("/") ? "page" : undefined}
+          >
+            Home
+          </a>
         </li>
         <li>
-          <a class={`nav-link ${isActive("/about") ? "is-active" : ""}`} href="/about">About</a>
+          <a
+            class={`nav-link ${isActive("/about") ? "is-active" : ""}`}
+            href="/about"
+            aria-current={isActive("/about") ? "page" : undefined}
+          >
+            About
+          </a>
         </li>
         <li>
-          <a class={`nav-link ${isActive("/events") ? "is-active" : ""}`} href="/events">Events</a>
+          <a
+            class={`nav-link ${isActive("/events") ? "is-active" : ""}`}
+            href="/events"
+            aria-current={isActive("/events") ? "page" : undefined}
+          >
+            Events
+          </a>
         </li>
         <li>
           <a class="nav-link" href="/#get-involved">Get involved</a>
@@ -41,29 +74,53 @@ const isActive = (href) => (href === "/" ? pathname === "/" : pathname === href)
       </ul>
     </nav>
 
-    <a class={`button button-primary header-cta ${isActive("/join") ? "is-active-cta" : ""}`} href="/join">
+    <a
+      class={`button button-primary header-cta ${isActive("/join") ? "is-active-cta" : ""}`}
+      href="/join"
+      aria-current={isActive("/join") ? "page" : undefined}
+    >
       Join
     </a>
   </div>
 </header>
 
 <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav");
+  const navLinks = document.querySelectorAll(".nav-link");
 
-  // Toggle menu
-  menuToggle?.addEventListener('click', () => {
-    nav?.classList.toggle('is-open');
-    const isOpen = nav?.classList.contains('is-open');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
+  if (menuToggle instanceof HTMLButtonElement && nav instanceof HTMLElement) {
+    const closeMenu = () => {
+      nav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    };
 
-  // Close menu when a link is clicked
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      nav?.classList.remove('is-open');
-      menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
-  });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+        menuToggle.focus();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+
+      if (
+        target instanceof Node &&
+        !nav.contains(target) &&
+        !menuToggle.contains(target)
+      ) {
+        closeMenu();
+      }
+    });
+  }
 </script>

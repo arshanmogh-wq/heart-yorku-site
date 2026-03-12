@@ -2,7 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout>
+<BaseLayout
+  description="HEART is a York University student-led organization advancing health equity through advocacy, education, outreach, and community partnerships."
+>
   <div class="page">
     <section class="hero">
       <div class="container">
@@ -34,7 +36,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
             <div class="hero-media">
               <div class="logo-card">
-                <img src="/images/heart-logo.png" alt="HEART logo — York University Est. 2024" loading="eager" />
+                <img
+                  src="/images/heart-logo.png"
+                  alt="HEART logo — York University Est. 2024"
+                  width="1563"
+                  height="1563"
+                  loading="eager"
+                  fetchpriority="high"
+                />
                 <div class="logo-card-caption">
                   <span class="chip chip-blue">Health equity</span>
                   <span class="chip chip-orange">Community action</span>
@@ -43,7 +52,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
               <div class="hero-note">
                 <strong>Want updates?</strong> Follow us on Instagram
-                <a href="https://www.instagram.com/heart_yorku" target="_blank" rel="noreferrer">@heart_yorku</a>.
+                <a href="https://www.instagram.com/heart_yorku" target="_blank" rel="noopener noreferrer">@heart_yorku</a>.
               </div>
             </div>
           </div>
@@ -71,7 +80,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <div class="card animate-fade-up delay-400">
-            <div class="card-accent"></div>
             <h3>Community Action</h3>
             <p>Partner with organizations and volunteer to reduce barriers to care.</p>
           </div>
@@ -88,25 +96,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         <div class="cards cards-2">
           <div class="card animate-fade-up delay-100">
-            <div class="card-accent"></div>
             <h3>Community engagement</h3>
             <p>Volunteer with local partners and support community-centered initiatives.</p>
           </div>
 
           <div class="card animate-fade-up delay-200">
-            <div class="card-accent"></div>
             <h3>Research & awareness</h3>
             <p>Highlight inequities through data, storytelling, and student-led initiatives.</p>
           </div>
 
           <div class="card animate-fade-up delay-300">
-            <div class="card-accent"></div>
             <h3>Workshops & resources</h3>
             <p>Deliver health education and share inclusive, accessible resources.</p>
           </div>
 
           <div class="card animate-fade-up delay-400">
-            <div class="card-accent"></div>
             <h3>Advocacy campaigns</h3>
             <p>Promote equity-focused change and support marginalized communities.</p>
           </div>
@@ -128,7 +132,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="cta-actions">
             <a class="button button-primary" href="/join">Join HEART</a>
             <a class="button button-secondary" href="/events">View events</a>
-            <a class="button button-tertiary" href="https://www.instagram.com/heart_yorku" target="_blank" rel="noreferrer">
+            <a class="button button-tertiary" href="https://www.instagram.com/heart_yorku" target="_blank" rel="noopener noreferrer">
               Follow @heart_yorku
             </a>
           </div>

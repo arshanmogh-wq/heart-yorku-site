@@ -2,42 +2,68 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Events | HEART">
+<BaseLayout
+  title="Events | HEART"
+  description="Check whether HEART has public events scheduled and where to follow for workshops, outreach opportunities, and advocacy updates."
+>
   <div class="page">
     <section class="page-header">
       <div class="container">
         <h1 class="page-title">Events</h1>
         <p class="page-intro">
-          Upcoming events, workshops, and outreach initiatives will be posted here.
-          For the latest updates, follow us on Instagram.
+          Workshops, outreach opportunities, and advocacy initiatives will be shared here.
+          If no public events are posted yet, follow Instagram or join HEART to hear about the next update.
         </p>
 
-        <div class="hero-actions" style="margin-top: 14px;">
+        <div class="hero-actions page-actions">
           <a class="button button-primary" href="/join">Join to get updates</a>
-          <a class="button button-secondary" href="https://www.instagram.com/heart_yorku" target="_blank" rel="noreferrer">
+          <a class="button button-secondary" href="https://www.instagram.com/heart_yorku" target="_blank" rel="noopener noreferrer">
             Instagram @heart_yorku
           </a>
         </div>
       </div>
     </section>
 
+    <section class="section section-muted">
+      <div class="container">
+        <div class="cta-slab">
+          <div>
+            <h2 class="cta-title">No Public Events Posted Right Now</h2>
+            <p class="cta-lead">
+              This page will be updated when the next workshop, outreach activity, or awareness event is ready to share.
+              Until then, Instagram is the fastest place to catch announcements.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="button button-primary" href="https://www.instagram.com/heart_yorku" target="_blank" rel="noopener noreferrer">
+              Follow on Instagram
+            </a>
+            <a class="button button-secondary" href="/join">Join HEART</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
+        <h2 class="section-title">What You Can Expect</h2>
+        <p class="section-lead">
+          HEART uses this page to highlight the kinds of opportunities students and community members can expect to see.
+        </p>
+
         <div class="cards cards-3">
           <div class="card">
-            <div class="card-accent"></div>
             <h3>Workshops</h3>
             <p>Health education sessions and evidence-based resources to support community wellbeing.</p>
           </div>
 
           <div class="card">
-            <div class="card-accent"></div>
             <h3>Outreach</h3>
             <p>Volunteering and partnerships with community organizations to reduce barriers to care.</p>
           </div>
 
           <div class="card">
-            <div class="card-accent"></div>
             <h3>Advocacy campaigns</h3>
             <p>Awareness initiatives highlighting inequities and supporting inclusive systems.</p>
           </div>

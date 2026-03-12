@@ -2,7 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Join | HEART">
+<BaseLayout
+  title="Join | HEART"
+  description="Apply to join HEART at York University and get involved in advocacy, outreach, education, and community-focused health equity initiatives."
+>
   <div class="page">
     <section class="page-header">
       <div class="container">
@@ -12,9 +15,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           and community service. Get involved through volunteering, outreach, education, and advocacy.
         </p>
 
-        <div class="hero-actions" style="margin-top: 14px;">
+        <div class="hero-actions page-actions">
           <a class="button button-primary" href="#application">Apply now</a>
           <a class="button button-secondary" href="/about">Learn about HEART</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Before You Apply</h2>
+        <p class="section-lead">
+          HEART is open to students across programs and experience levels. Whether you are new to health equity work or
+          already involved in community initiatives, there are different ways to contribute.
+        </p>
+
+        <div class="cards cards-3">
+          <div class="card">
+            <h3>Who can join</h3>
+            <p>Students from any discipline who care about equity, advocacy, outreach, and community wellbeing.</p>
+          </div>
+
+          <div class="card">
+            <h3>How involvement works</h3>
+            <p>Opportunities can include campaigns, events, outreach, and planning support depending on current initiatives.</p>
+          </div>
+
+          <div class="card">
+            <h3>Questions first?</h3>
+            <p>If you want more context before applying, reach out by email or Instagram and the team can point you in the right direction.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -25,19 +55,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         <div class="cards cards-3">
           <div class="card">
-            <div class="card-accent"></div>
             <h3>Volunteer & outreach</h3>
             <p>Support community partners and help reduce barriers to care through outreach initiatives.</p>
           </div>
 
           <div class="card">
-            <div class="card-accent"></div>
             <h3>Education & resources</h3>
             <p>Help create and share evidence-based resources that are accessible and inclusive.</p>
           </div>
 
           <div class="card">
-            <div class="card-accent"></div>
             <h3>Advocacy & campaigns</h3>
             <p>Contribute to awareness campaigns that highlight inequities and promote change.</p>
           </div>
@@ -52,13 +79,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           Fill out the form below to join. If the embed doesn’t load, open the form in a new tab.
         </p>
 
-        <!-- Replace YOUR_FORM_ID with your actual Google Form ID -->
         <div class="hero-actions">
           <a
             class="button button-secondary"
             href="https://docs.google.com/forms/d/e/1FAIpQLSe7ovKtnT5WIpPmU920JeTv8WpCcDoNra5Sona9ExodDW6VVA/viewform?pli=1"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Open form in a new tab
           </a>
@@ -69,6 +95,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             title="HEART membership form"
             src="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe7ovKtnT5WIpPmU920JeTv8WpCcDoNra5Sona9ExodDW6VVA/viewform?usp=send_form&pli=1&authuser=0"
             loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
           >
             Loading…
           </iframe>
@@ -84,13 +111,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <p class="cta-lead">
               Email us at <a href="mailto:heartyorku@gmail.com">heartyorku@gmail.com</a>
               or message us on Instagram
-              <a href="https://www.instagram.com/heart_yorku" target="_blank" rel="noreferrer">@heart_yorku</a>.
+              <a href="https://www.instagram.com/heart_yorku" target="_blank" rel="noopener noreferrer">@heart_yorku</a>.
             </p>
           </div>
 
           <div class="cta-actions">
             <a class="button button-primary" href="mailto:heartyorku@gmail.com">Email</a>
-            <a class="button button-secondary" href="https://www.instagram.com/heart_yorku" target="_blank" rel="noreferrer">
+            <a class="button button-secondary" href="https://www.instagram.com/heart_yorku" target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
           </div>

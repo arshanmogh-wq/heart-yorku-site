@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">HEART social card</title>
+  <desc id="desc">Health Equity Advocacy Response Team at York University.</desc>
+  <defs>
+    <linearGradient id="surface" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffaf2" />
+      <stop offset="100%" stop-color="#f5f8f8" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#57ced4" />
+      <stop offset="100%" stop-color="#ff904e" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#1a1a1a" />
+  <circle cx="1030" cy="110" r="220" fill="#57ced4" fill-opacity="0.18" />
+  <circle cx="130" cy="590" r="220" fill="#ff904e" fill-opacity="0.16" />
+  <rect x="48" y="48" width="1104" height="534" rx="36" fill="url(#surface)" />
+
+  <rect x="96" y="96" width="102" height="102" rx="28" fill="url(#accent)" />
+  <path d="M124 116h14v28h18v-28h14v62h-14v-22h-18v22h-14v-62Z" fill="#1a1a1a" />
+
+  <text x="236" y="156" fill="#1a1a1a" font-family="Outfit, Inter, Arial, sans-serif" font-size="62" font-weight="900">
+    HEART
+  </text>
+  <text x="96" y="280" fill="#1a1a1a" font-family="Outfit, Inter, Arial, sans-serif" font-size="74" font-weight="700">
+    Health Equity Advocacy
+  </text>
+  <text x="96" y="360" fill="#1a1a1a" font-family="Outfit, Inter, Arial, sans-serif" font-size="74" font-weight="700">
+    Response Team
+  </text>
+  <text x="96" y="438" fill="#4b4b4b" font-family="Inter, Arial, sans-serif" font-size="34">
+    York University student-led advocacy, education, outreach,
+  </text>
+  <text x="96" y="482" fill="#4b4b4b" font-family="Inter, Arial, sans-serif" font-size="34">
+    and community partnerships focused on health equity.
+  </text>
+
+  <rect x="96" y="522" width="286" height="14" rx="7" fill="url(#accent)" />
+</svg>

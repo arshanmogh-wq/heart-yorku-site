@@ -7,19 +7,30 @@ export interface Props {
   title?: string;
   description?: string;
   image?: string;
+  noindex?: boolean;
 }
 
 const {
   title = "HEART — Health Equity Advocacy Response Team",
-  description = "HEART (Health Equity Advocacy Response Team) is a York University student-led organization advancing health equity through advocacy, education, outreach, and community partnerships.",
-  image = "/favicon.png",
+  description = "HEART is a York University student-led organization advancing health equity through advocacy, education, outreach, and community partnerships.",
+  image = "/social-card.svg",
+  noindex = false,
 } = Astro.props;
 
-// Canonical URL
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
-
-// Social Image URL (ensures absolute path)
-const socialImageURL = new URL(image, Astro.url);
+const siteURL = new URL(Astro.site ?? Astro.url.origin);
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const socialImageURL = new URL(image, siteURL);
+const robots = noindex ? "noindex, nofollow" : "index, follow";
+const organizationJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "HEART",
+  alternateName: "Health Equity Advocacy Response Team",
+  url: siteURL.toString(),
+  logo: new URL("/images/heart-logo.png", siteURL).toString(),
+  email: "heartyorku@gmail.com",
+  sameAs: ["https://www.instagram.com/heart_yorku"],
+});
 ---
 
 <!doctype html>
@@ -33,27 +44,35 @@ const socialImageURL = new URL(image, Astro.url);
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content="HEART" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:alt" content={`${title} social preview`} />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={socialImageURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+    <meta name="twitter:image:alt" content={`${title} social preview`} />
 
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="theme-color" content="#0B2239" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={organizationJsonLd}></script>
   </head>
 
   <body>
