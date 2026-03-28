@@ -1,24 +1,49 @@
-/* Western branch — placeholder palette: purple & white (Western-inspired) */
+/*
+ * Western University — official brand colors
+ * Source of truth: docs/branch-brand-colors.md
+ */
 :root {
-  --navy: #2a1f47;
-  --text: #2b2438;
-  --muted: rgba(43, 36, 56, 0.78);
+  --brand-western-purple: #4f2683;
+  --brand-white: #ffffff;
+  --brand-grey-silver: #807f83;
+  --brand-grey-cool: #63666a;
 
-  --blue-700: #6b3fa0;
-  --blue-500: #4f2683;
+  /* Shared layout tokens (global.css) */
+  --navy: #2a1a45;
+  --text: #2b2830;
+  --muted: rgba(99, 102, 106, 0.88);
 
-  --orange-600: #7c3aad;
-  --orange-200: rgba(79, 38, 131, 0.14);
+  --blue-500: var(--brand-western-purple);
+  --blue-700: var(--brand-grey-cool);
 
-  --border: rgba(42, 31, 71, 0.12);
+  --orange-600: var(--brand-western-purple);
+  --orange-200: rgba(79, 38, 131, 0.16);
+
+  --border: rgba(99, 102, 106, 0.22);
 }
 
 body {
-  background-color: #f8f6fc;
+  background-color: var(--brand-white);
 }
 
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid rgba(79, 38, 131, 0.45);
   outline-offset: 3px;
+}
+
+.hero-kicker {
+  background: rgba(79, 38, 131, 0.1);
+  border: 1px solid rgba(79, 38, 131, 0.3);
+  color: rgba(42, 26, 69, 0.92);
+}
+
+.chip-blue {
+  border-color: rgba(79, 38, 131, 0.45);
+  background: rgba(79, 38, 131, 0.1);
+}
+
+.chip-orange {
+  border-color: rgba(99, 102, 106, 0.35);
+  background: rgba(99, 102, 106, 0.1);
 }

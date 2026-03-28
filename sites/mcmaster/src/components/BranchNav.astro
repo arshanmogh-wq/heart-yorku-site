@@ -52,7 +52,7 @@ const isActive = (href: string) => normalizePath(href) === pathname;
         </li>
         <li>
           <a
-            class={`nav-link ${isActive("/join") ? "is-active" : ""}`}
+            class={`nav-link nav-link-cta ${isActive("/join") ? "is-active" : ""}`}
             href="/join"
             aria-current={isActive("/join") ? "page" : undefined}
           >
