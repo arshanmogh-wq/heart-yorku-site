@@ -1,0 +1,33 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { branch } from "../site.ts";
+---
+
+<BranchLayout
+  title={`Events — HEART ${branch.shortName}`}
+  description={`Workshops, campaigns, and gatherings run by HEART at ${branch.universityName}.`}
+>
+  <div class="page">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Events at McMaster</h1>
+        <p class="section-lead">
+          Hamilton programming—think campus walks with community nurses, advocacy letter-writing cafés,
+          and training nights before provincial actions—lives on this page. It complements, not copies,
+          the <strong>main HEART events feed</strong> for all-branch initiatives.
+        </p>
+        <p class="section-lead">
+          <strong>RSVPs &amp; accessibility:</strong> we note scent-reduced spaces and hybrid options when we
+          can. Watch
+          <a href={branch.instagramUrl} target="_blank" rel="noopener noreferrer">{branch.instagramHandle}</a>
+          for drops, or message <a href={`mailto:${branch.contactEmail}`}>{branch.contactEmail}</a> to co-host.
+        </p>
+        <ul class="hero-bullets" style="max-width: 52ch;">
+          <li>McMaster–community health partnerships and speaker series</li>
+          <li>Volunteer briefings before regional HEART pushes</li>
+          <li>Socials for new members (pair with <a href="/join">Join</a>)</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</BranchLayout>

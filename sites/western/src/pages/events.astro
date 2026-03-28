@@ -1,0 +1,33 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { branch } from "../site.ts";
+---
+
+<BranchLayout
+  title={`Events — HEART ${branch.shortName}`}
+  description={`Workshops, campaigns, and gatherings run by HEART at ${branch.universityName}.`}
+>
+  <div class="page">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Events at Western</h1>
+        <p class="section-lead">
+          Western’s HEART branch runs its own schedule: London-campus meetups, faculty-adjacent talks,
+          and outreach with local community health partners. Nothing here replaces the
+          <strong>club-wide</strong> calendar on the main site—it adds what is happening at Western only.
+        </p>
+        <p class="section-lead">
+          <strong>Spring / fall blocks:</strong> we post room bookings and RSVP links as they are approved.
+          Follow
+          <a href={branch.instagramUrl} target="_blank" rel="noopener noreferrer">{branch.instagramHandle}</a>
+          or write <a href={`mailto:${branch.contactEmail}`}>{branch.contactEmail}</a> to host a joint event.
+        </p>
+        <ul class="hero-bullets" style="max-width: 52ch;">
+          <li>Interdisciplinary health-equity discussions with Western clubs</li>
+          <li>Service days and education tables on main campus</li>
+          <li>Leadership syncs before larger HEART-wide campaigns</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</BranchLayout>

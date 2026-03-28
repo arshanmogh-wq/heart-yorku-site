@@ -1,0 +1,35 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { MAIN_CLUB_SITE, branch } from "../site.ts";
+---
+
+<BranchLayout
+  title={`Join — HEART ${branch.shortName}`}
+  description={`Get involved with HEART at ${branch.universityName}.`}
+>
+  <div class="page">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Join HEART at Western</h1>
+        <p class="section-lead">
+          Whether you are in Med Sci, Social Sci, or an allied program, Western’s HEART crew needs writers,
+          designers, facilitators, and folks who want to learn. This page is the <strong>Western-only</strong>
+          entry point—roles and term expectations differ from other campuses.
+        </p>
+        <p class="section-lead">
+          <strong>Next step:</strong> email <a href={`mailto:${branch.contactEmail}`}>{branch.contactEmail}</a>
+          with “Join — Western” in the subject line. Tell us your faculty/year and whether you prefer events,
+          advocacy, or comms. We will add you to the Discord or email list we use for London planning.
+        </p>
+        <p class="section-lead">
+          Need the <strong>national onboarding</strong> form? Visit the
+          <a href={`${MAIN_CLUB_SITE.replace(/\/$/, "")}/join`}>main HEART Join page</a>.
+        </p>
+        <div class="hero-actions" style="margin-top: 1rem;">
+          <a class="button button-primary" href={`mailto:${branch.contactEmail}`}>Email Western branch</a>
+          <a class="button button-secondary" href="/events">Branch events</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</BranchLayout>

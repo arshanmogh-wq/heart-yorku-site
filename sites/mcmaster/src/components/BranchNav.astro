@@ -2,6 +2,14 @@
 import { MAIN_CLUB_SITE, branch } from "../site.ts";
 
 const main = MAIN_CLUB_SITE.replace(/\/$/, "");
+
+const normalizePath = (value: string) => {
+  if (!value || value === "/") return "/";
+  return value.endsWith("/") ? value.slice(0, -1) : value;
+};
+
+const pathname = normalizePath(Astro.url.pathname);
+const isActive = (href: string) => normalizePath(href) === pathname;
 ---
 
 <header class="site-header branch-site-header">
@@ -34,16 +42,52 @@ const main = MAIN_CLUB_SITE.replace(/\/$/, "");
     <nav id={branch.navId} class="nav" aria-label={branch.navAriaLabel}>
       <ul class="nav-list">
         <li>
-          <a class="nav-link is-active" href="/" aria-current="page">{branch.homeNavLabel}</a>
+          <a
+            class={`nav-link ${isActive("/") ? "is-active" : ""}`}
+            href="/"
+            aria-current={isActive("/") ? "page" : undefined}
+          >
+            {branch.homeNavLabel}
+          </a>
         </li>
         <li>
-          <a class="nav-link" href={`${main}/about`}>About HEART</a>
+          <a
+            class={`nav-link ${isActive("/join") ? "is-active" : ""}`}
+            href="/join"
+            aria-current={isActive("/join") ? "page" : undefined}
+          >
+            Join
+          </a>
         </li>
         <li>
-          <a class="nav-link" href={`${main}/events`}>Events</a>
+          <a
+            class={`nav-link ${isActive("/media") ? "is-active" : ""}`}
+            href="/media"
+            aria-current={isActive("/media") ? "page" : undefined}
+          >
+            Media
+          </a>
         </li>
         <li>
-          <a class="nav-link" href={`${main}/join`}>Join</a>
+          <a
+            class={`nav-link ${isActive("/events") ? "is-active" : ""}`}
+            href="/events"
+            aria-current={isActive("/events") ? "page" : undefined}
+          >
+            Events
+          </a>
+        </li>
+        <li>
+          <a
+            class={`nav-link ${isActive("/executive-team") ? "is-active" : ""}`}
+            href="/executive-team"
+            aria-current={isActive("/executive-team") ? "page" : undefined}
+          >
+            Team
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href={`${main}/about`}>About</a>
         </li>
       </ul>
     </nav>

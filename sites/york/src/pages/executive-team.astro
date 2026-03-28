@@ -1,0 +1,26 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { branch } from "../site.ts";
+---
+
+<BranchLayout
+  title={`Executive team — HEART ${branch.shortName}`}
+  description={`Leadership contacts for HEART at ${branch.universityName} (coming soon).`}
+>
+  <div class="page">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Executive team · York</h1>
+        <p class="section-lead">
+          Bios, roles, and photos for York’s elected or appointed leads will appear here. The main HEART
+          site does not list branch executives—each campus maintains its own team page.
+        </p>
+        <p class="section-lead">
+          <strong>Status:</strong> roster not published yet. Check back after elections or email
+          <a href={`mailto:${branch.contactEmail}`}>{branch.contactEmail}</a>
+          if you need a formal HEART contact for York.
+        </p>
+      </div>
+    </section>
+  </div>
+</BranchLayout>

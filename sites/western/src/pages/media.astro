@@ -1,0 +1,29 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { branch } from "../site.ts";
+---
+
+<BranchLayout
+  title={`Media — HEART ${branch.shortName}`}
+  description={`Posters, photos, and graphics from HEART at ${branch.universityName}.`}
+>
+  <div class="page">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Media · Western branch</h1>
+        <p class="section-lead">
+          Western-specific branding—purple-forward posters, recap albums, and story highlights—stays on
+          this page so it does not clash with York or McMaster drops. Each branch controls its own vault.
+        </p>
+        <p class="section-lead">
+          <strong>Upload path:</strong> add assets under <code>sites/western/public/posters/</code> or
+          <code>sites/western/public/gallery/</code> and wire them into this page when you publish.
+        </p>
+        <p class="section-lead">
+          Share with credit:
+          <a href={branch.instagramUrl} target="_blank" rel="noopener noreferrer">{branch.instagramHandle}</a>.
+        </p>
+      </div>
+    </section>
+  </div>
+</BranchLayout>

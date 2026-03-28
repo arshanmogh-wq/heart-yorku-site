@@ -1,0 +1,35 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { MAIN_CLUB_SITE, branch } from "../site.ts";
+---
+
+<BranchLayout
+  title={`Join — HEART ${branch.shortName}`}
+  description={`Get involved with HEART at ${branch.universityName}.`}
+>
+  <div class="page">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Join HEART at York</h1>
+        <p class="section-lead">
+          York students can plug into <strong>this branch</strong> for on-campus roles, working groups,
+          and event crews. You do not need a health-sci background—just interest in equity and community.
+        </p>
+        <p class="section-lead">
+          <strong>How to start:</strong> email <a href={`mailto:${branch.contactEmail}`}>{branch.contactEmail}</a>
+          with “Join — York” in the subject, or DM
+          <a href={branch.instagramUrl} target="_blank" rel="noopener noreferrer">{branch.instagramHandle}</a>.
+          We will point you to the next general meeting or volunteer shift.
+        </p>
+        <p class="section-lead">
+          For <strong>organization-wide</strong> onboarding and shared forms, see the
+          <a href={`${MAIN_CLUB_SITE.replace(/\/$/, "")}/join`}>main HEART Join page</a>.
+        </p>
+        <div class="hero-actions" style="margin-top: 1rem;">
+          <a class="button button-primary" href={`mailto:${branch.contactEmail}`}>Email York branch</a>
+          <a class="button button-secondary" href="/events">Branch events</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</BranchLayout>

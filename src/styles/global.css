@@ -253,6 +253,90 @@ strong {
   box-shadow: 0 0 0 3px rgba(87, 206, 212, 0.25), 0 10px 20px rgba(255, 144, 78, 0.20);
 }
 
+/* Branch microsite headers — stable grid + compact pills (many nav items) */
+@media (min-width: 769px) {
+  .branch-site-header .header-inner {
+    display: grid;
+    align-items: center;
+    column-gap: 16px;
+    row-gap: 12px;
+    flex-wrap: unset !important;
+  }
+
+  .branch-site-header .brand {
+    min-width: 0;
+  }
+
+  .branch-site-header .nav {
+    flex: unset !important;
+    width: auto !important;
+    min-width: 0;
+    max-width: 100%;
+    order: 0 !important;
+  }
+
+  .branch-site-header .nav-list {
+    flex-wrap: wrap;
+    gap: 6px 8px;
+  }
+
+  .branch-site-header .nav-link {
+    padding: 8px 10px;
+    font-size: 0.8125rem;
+  }
+
+  .branch-site-header .header-cta.branch-main-link,
+  .branch-site-header .branch-main-link.header-cta {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 10px 16px;
+    font-size: 0.875rem;
+    align-self: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1180px) {
+  .branch-site-header .header-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand cta"
+      "nav nav";
+  }
+
+  .branch-site-header .brand {
+    grid-area: brand;
+    max-width: 100%;
+  }
+
+  .branch-site-header .nav {
+    grid-area: nav;
+  }
+
+  .branch-site-header .header-cta.branch-main-link,
+  .branch-site-header .branch-main-link.header-cta {
+    grid-area: cta;
+    justify-self: end;
+  }
+
+  .branch-site-header .nav-list {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1181px) {
+  .branch-site-header .header-inner {
+    grid-template-columns: minmax(0, auto) minmax(0, 1fr) auto;
+  }
+
+  .branch-site-header .brand {
+    max-width: min(280px, 28vw);
+  }
+
+  .branch-site-header .nav-list {
+    justify-content: flex-end;
+  }
+}
+
 /* Branch selector (header) */
 .header-branch {
   position: relative;
@@ -858,6 +942,10 @@ strong {
 
   .nav.is-open {
     max-height: 400px;
+  }
+
+  .branch-site-header .nav.is-open {
+    max-height: 520px;
   }
 
   .nav-list {

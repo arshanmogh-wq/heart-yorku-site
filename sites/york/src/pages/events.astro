@@ -1,0 +1,32 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { branch } from "../site.ts";
+---
+
+<BranchLayout
+  title={`Events — HEART ${branch.shortName}`}
+  description={`Workshops, campaigns, and gatherings run by HEART at ${branch.universityName}.`}
+>
+  <div class="page">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Events at York</h1>
+        <p class="section-lead">
+          This calendar is for <strong>York-only</strong> HEART programming—tabling, guest speakers,
+          volunteer nights, and campus partnerships. Club-wide listings stay on the main HEART site.
+        </p>
+        <p class="section-lead">
+          <strong>Right now:</strong> dates are being finalized for the term. Follow
+          <a href={branch.instagramUrl} target="_blank" rel="noopener noreferrer">{branch.instagramHandle}</a>
+          for first announcements, or email <a href={`mailto:${branch.contactEmail}`}>{branch.contactEmail}</a>
+          to propose a collab.
+        </p>
+        <ul class="hero-bullets" style="max-width: 52ch;">
+          <li>Health-equity themed panels and skill-building sessions</li>
+          <li>Outreach alongside York student groups and community orgs</li>
+          <li>Volunteer onboarding meetups (see also our <a href="/join">Join</a> page)</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</BranchLayout>
