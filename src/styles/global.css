@@ -253,6 +253,94 @@ strong {
   box-shadow: 0 0 0 3px rgba(87, 206, 212, 0.25), 0 10px 20px rgba(255, 144, 78, 0.20);
 }
 
+/* Branch selector (header) */
+.header-branch {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.branch-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.branch-dropdown-toggle:hover {
+  background: rgba(87, 206, 212, 0.12);
+}
+
+.branch-dropdown.is-open .branch-dropdown-toggle {
+  background: rgba(87, 206, 212, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(87, 206, 212, 0.35);
+}
+
+.branch-dropdown-chevron {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--navy);
+  margin-top: 2px;
+  transition: transform 0.2s ease;
+}
+
+.branch-dropdown.is-open .branch-dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+.branch-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 11rem;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  z-index: 1002;
+}
+
+.branch-dropdown-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.branch-dropdown-item:hover {
+  background: rgba(87, 206, 212, 0.12);
+}
+
+.branch-dropdown-item:focus-visible {
+  outline: none;
+  background: rgba(87, 206, 212, 0.12);
+  box-shadow: inset 0 0 0 2px rgba(87, 206, 212, 0.45);
+}
+
 /* Page + sections */
 .page {
   padding-bottom: 40px;
@@ -806,6 +894,21 @@ strong {
   .nav-link.is-active {
     background: var(--orange-200);
     box-shadow: inset 1px 0 0 0 rgba(255, 144, 78, 0.35);
+  }
+
+  .header-branch {
+    order: 2;
+  }
+
+  .branch-dropdown-toggle {
+    padding: 8px 10px;
+    font-size: 0.88rem;
+  }
+
+  .branch-dropdown-menu {
+    right: 0;
+    left: auto;
+    min-width: 10rem;
   }
 
   .header-cta {

@@ -74,6 +74,43 @@ const navId = "primary-navigation";
       </ul>
     </nav>
 
+    <div class="header-branch branch-dropdown">
+      <button
+        type="button"
+        class="branch-dropdown-toggle"
+        id="branch-toggle"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-controls="branch-menu"
+      >
+        Branch
+        <span class="branch-dropdown-chevron" aria-hidden="true"></span>
+      </button>
+      <ul
+        id="branch-menu"
+        class="branch-dropdown-menu"
+        role="menu"
+        aria-labelledby="branch-toggle"
+        hidden
+      >
+        <li role="none">
+          <button type="button" class="branch-dropdown-item" role="menuitem">
+            York
+          </button>
+        </li>
+        <li role="none">
+          <button type="button" class="branch-dropdown-item" role="menuitem">
+            Western
+          </button>
+        </li>
+        <li role="none">
+          <button type="button" class="branch-dropdown-item" role="menuitem">
+            McMaster
+          </button>
+        </li>
+      </ul>
+    </div>
+
     <a
       class={`button button-primary header-cta ${isActive("/join") ? "is-active-cta" : ""}`}
       href="/join"
@@ -120,6 +157,54 @@ const navId = "primary-navigation";
         !menuToggle.contains(target)
       ) {
         closeMenu();
+      }
+    });
+  }
+
+  const branchRoot = document.querySelector(".branch-dropdown");
+  const branchToggle = document.querySelector("#branch-toggle");
+  const branchMenu = document.querySelector("#branch-menu");
+
+  if (
+    branchRoot instanceof HTMLElement &&
+    branchToggle instanceof HTMLButtonElement &&
+    branchMenu instanceof HTMLElement
+  ) {
+    const closeBranch = () => {
+      branchMenu.hidden = true;
+      branchToggle.setAttribute("aria-expanded", "false");
+      branchRoot.classList.remove("is-open");
+    };
+
+    branchToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const isOpen = branchRoot.classList.toggle("is-open");
+      branchMenu.hidden = !isOpen;
+      branchToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    branchMenu.querySelectorAll(".branch-dropdown-item").forEach((item) => {
+      item.addEventListener("click", () => {
+        closeBranch();
+        branchToggle.focus();
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && branchRoot.classList.contains("is-open")) {
+        closeBranch();
+        branchToggle.focus();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (
+        target instanceof Node &&
+        !branchRoot.contains(target) &&
+        branchRoot.classList.contains("is-open")
+      ) {
+        closeBranch();
       }
     });
   }
