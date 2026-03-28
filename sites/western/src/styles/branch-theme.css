@@ -1,0 +1,24 @@
+/* Western branch — placeholder palette: purple & white (Western-inspired) */
+:root {
+  --navy: #2a1f47;
+  --text: #2b2438;
+  --muted: rgba(43, 36, 56, 0.78);
+
+  --blue-700: #6b3fa0;
+  --blue-500: #4f2683;
+
+  --orange-600: #7c3aad;
+  --orange-200: rgba(79, 38, 131, 0.14);
+
+  --border: rgba(42, 31, 71, 0.12);
+}
+
+body {
+  background-color: #f8f6fc;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(79, 38, 131, 0.45);
+  outline-offset: 3px;
+}

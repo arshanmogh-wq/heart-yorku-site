@@ -329,6 +329,8 @@ strong {
   text-align: left;
   cursor: pointer;
   transition: background 0.15s ease;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .branch-dropdown-item:hover {

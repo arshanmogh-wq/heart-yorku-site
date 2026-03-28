@@ -1,0 +1,111 @@
+---
+import "../../../../src/styles/global.css";
+import "../styles/branch-theme.css";
+import BranchNav from "../components/BranchNav.astro";
+import BranchFooter from "../components/BranchFooter.astro";
+import { MAIN_CLUB_SITE, branch } from "../site.ts";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = branch.defaultTitle,
+  description = branch.defaultDescription,
+  image = branch.socialImage,
+  noindex = false,
+} = Astro.props;
+
+const siteURL = new URL(Astro.site ?? Astro.url.origin);
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const socialImageURL = new URL(image, siteURL);
+const robots = noindex ? "noindex, nofollow" : "index, follow";
+const isHomePage = Astro.url.pathname === "/";
+const mainOrigin = MAIN_CLUB_SITE.replace(/\/$/, "");
+const organizationJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: branch.orgSchemaName,
+  alternateName: branch.orgAlternateName,
+  url: siteURL.toString(),
+  parentOrganization: {
+    "@type": "Organization",
+    name: "HEART",
+    url: mainOrigin,
+  },
+  logo: new URL(branch.logoSrc, siteURL).toString(),
+  email: branch.contactEmail,
+  sameAs: [branch.instagramUrl],
+});
+const websiteJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: branch.siteOgName,
+  alternateName: branch.websiteAlternateName,
+  url: siteURL.toString(),
+});
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={branch.siteOgName} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:alt" content={`${title} social preview`} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+    <meta name="twitter:image:alt" content={`${title} social preview`} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content={branch.themeColor} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={organizationJsonLd}></script>
+    {isHomePage && <script type="application/ld+json" set:html={websiteJsonLd}></script>}
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <BranchNav />
+    <main id="main" class="site-main">
+      <slot />
+    </main>
+    <BranchFooter />
+  </body>
+</html>
+
+<style is:global>
+  .branch-site-footer .footer-grid {
+    grid-template-columns: 1.25fr 0.9fr 1fr 1fr;
+  }
+
+  @media (max-width: 900px) {
+    .branch-site-footer .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

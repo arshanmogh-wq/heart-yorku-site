@@ -1,0 +1,83 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { MAIN_CLUB_SITE, branch } from "../site.ts";
+---
+
+<BranchLayout
+  description="HEART at York University: the founding branch of the Health Equity Advocacy Response Team — advocacy, education, outreach, and community partnerships."
+>
+  <div class="page">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-surface">
+          <div class="hero-grid">
+            <div>
+              <div class="hero-kicker">{branch.universityName} branch · Student-led</div>
+
+              <h1 class="hero-title animate-fade-up">
+                HEART at <span class="accent">{branch.shortName}</span>
+              </h1>
+
+              <p class="hero-lead animate-fade-up delay-100">
+                This is the {branch.universityName} home for HEART (Health Equity Advocacy Response Team).
+                Connect with branch-specific updates, events, and ways to get involved on campus —
+                while the main HEART site covers the wider organization.
+              </p>
+
+              <div class="hero-actions animate-fade-up delay-200">
+                <a class="button button-primary" href={`mailto:${branch.contactEmail}`}>Email the branch</a>
+                <a
+                  class="button button-secondary"
+                  href={branch.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {branch.instagramHandle}
+                </a>
+              </div>
+
+              <ul class="hero-bullets">
+                <li>On-campus programming &amp; outreach</li>
+                <li>Aligned with HEART’s mission across branches</li>
+                <li>Open to {branch.universityName} students and community partners</li>
+              </ul>
+            </div>
+
+            <div class="hero-media">
+              <div class="logo-card">
+                <img
+                  src={branch.logoSrc}
+                  alt={`HEART logo — ${branch.universityName}`}
+                  width="200"
+                  height="200"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+                <div class="logo-card-caption">
+                  <span class="chip chip-blue">{branch.shortName} branch</span>
+                  <span class="chip chip-orange">Health equity</span>
+                </div>
+              </div>
+
+              <div class="hero-note">
+                <strong>Organization-wide info?</strong> Visit the
+                <a href={MAIN_CLUB_SITE}>main HEART club site</a>
+                for about, events, and join details for all branches.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="on-campus">
+      <div class="container">
+        <h2 class="section-title">On campus at {branch.shortName}</h2>
+        <p class="section-lead">
+          Add branch-specific meetings, room bookings, and leadership contacts here as this microsite
+          grows. For now, reach out by email or Instagram for the latest from HEART at {branch.shortName}.
+        </p>
+      </div>
+    </section>
+  </div>
+</BranchLayout>

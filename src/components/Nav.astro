@@ -1,4 +1,6 @@
 ---
+import { branchMicrositeLinks } from "../config/branchSites.ts";
+
 const normalizePath = (value) => {
   if (!value || value === "/") {
     return "/";
@@ -94,19 +96,37 @@ const navId = "primary-navigation";
         hidden
       >
         <li role="none">
-          <button type="button" class="branch-dropdown-item" role="menuitem">
+          <a
+            class="branch-dropdown-item"
+            role="menuitem"
+            href={branchMicrositeLinks.york}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             York
-          </button>
+          </a>
         </li>
         <li role="none">
-          <button type="button" class="branch-dropdown-item" role="menuitem">
+          <a
+            class="branch-dropdown-item"
+            role="menuitem"
+            href={branchMicrositeLinks.western}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Western
-          </button>
+          </a>
         </li>
         <li role="none">
-          <button type="button" class="branch-dropdown-item" role="menuitem">
+          <a
+            class="branch-dropdown-item"
+            role="menuitem"
+            href={branchMicrositeLinks.mcmaster}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             McMaster
-          </button>
+          </a>
         </li>
       </ul>
     </div>
@@ -183,10 +203,9 @@ const navId = "primary-navigation";
       branchToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    branchMenu.querySelectorAll(".branch-dropdown-item").forEach((item) => {
+    branchMenu.querySelectorAll("a.branch-dropdown-item").forEach((item) => {
       item.addEventListener("click", () => {
         closeBranch();
-        branchToggle.focus();
       });
     });
 

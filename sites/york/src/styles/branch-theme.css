@@ -1,0 +1,24 @@
+/* York branch — placeholder palette: red & white inspired by York U branding */
+:root {
+  --navy: #1a1a1a;
+  --text: #2a2224;
+  --muted: rgba(42, 34, 36, 0.78);
+
+  --blue-700: #c41e3a;
+  --blue-500: #e31837;
+
+  --orange-600: #b01030;
+  --orange-200: rgba(227, 24, 55, 0.14);
+
+  --border: rgba(26, 26, 26, 0.1);
+}
+
+body {
+  background-color: #fff8f8;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(227, 24, 55, 0.45);
+  outline-offset: 3px;
+}

@@ -1,0 +1,56 @@
+---
+import { MAIN_CLUB_SITE, branch } from "../site.ts";
+
+const main = MAIN_CLUB_SITE.replace(/\/$/, "");
+---
+
+<footer class="site-footer branch-site-footer">
+  <div class="footer-top-accent" aria-hidden="true"></div>
+
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-title">{branch.footerBrandTitle}</div>
+      <p class="footer-muted">
+        {branch.universityName} branch of the Health Equity Advocacy Response Team — student-led health
+        equity work through advocacy, education, outreach, and community partnerships.
+      </p>
+      <p class="footer-muted footer-disclaimer">
+        {branch.disclaimer}
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">This branch</h3>
+      <ul class="footer-links">
+        <li><a href="/">{branch.homeNavLabel}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">HEART (all branches)</h3>
+      <ul class="footer-links">
+        <li><a href={main}>Main club site</a></li>
+        <li><a href={`${main}/about`}>About</a></li>
+        <li><a href={`${main}/events`}>Events</a></li>
+        <li><a href={`${main}/join`}>Join</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">Contact</h3>
+      <ul class="footer-links">
+        <li><a href={`mailto:${branch.contactEmail}`}>{branch.contactEmail}</a></li>
+        <li>
+          <a href={branch.instagramUrl} target="_blank" rel="noopener noreferrer">
+            Instagram: {branch.instagramHandle}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© {new Date().getFullYear()} {branch.footerCopyright}</span>
+    <span class="footer-muted">Branch microsite · Astro</span>
+  </div>
+</footer>
