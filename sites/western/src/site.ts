@@ -22,6 +22,6 @@ export const branch = {
   defaultTitle: "HEART Western — Health Equity Advocacy Response Team",
   defaultDescription:
     "HEART at Western University: student-led health equity advocacy, education, outreach, and community partnerships.",
-  logoSrc: "/images/branch-logo.svg",
+  logoSrc: "/images/heart-western-logo.jpg",
   socialImage: "/social-card.svg",
 } as const;
