@@ -16,8 +16,8 @@ export const branch = {
   disclaimer:
     "This is a student-led website and is not an official Western University website.",
   contactEmail: "heartwesternu@gmail.com",
-  instagramUrl: "https://www.instagram.com/heart_westernu",
-  instagramHandle: "@heart_westernu",
+  instagramUrl: "https://www.instagram.com/heart_uwo",
+  instagramHandle: "@heart_uwo",
   themeColor: "#4F2683",
   defaultTitle: "HEART Western — Health Equity Advocacy Response Team",
   defaultDescription:
