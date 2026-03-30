@@ -76,7 +76,9 @@ const websiteJsonLd = JSON.stringify({
     <meta name="twitter:image" content={socialImageURL} />
     <meta name="twitter:image:alt" content={`${title} social preview`} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/jpeg" href={branch.logoSrc} />
+    <link rel="shortcut icon" href={branch.logoSrc} />
+    <link rel="apple-touch-icon" href={branch.logoSrc} />
     <meta name="theme-color" content={branch.themeColor} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
