@@ -1,0 +1,48 @@
+/*
+ * York University — official brand colors
+ * Source of truth: docs/branch-brand-colors.md
+ */
+:root {
+  --brand-york-red: #e31837;
+  --brand-white: #ffffff;
+  --brand-black: #000000;
+
+  /* Shared layout tokens (global.css) */
+  --navy: var(--brand-black);
+  --text: #141414;
+  --muted: rgba(0, 0, 0, 0.68);
+
+  --blue-500: var(--brand-york-red);
+  --blue-700: var(--brand-black);
+
+  --orange-600: var(--brand-york-red);
+  --orange-200: rgba(227, 24, 55, 0.16);
+
+  --border: rgba(0, 0, 0, 0.12);
+}
+
+body {
+  background-color: var(--brand-white);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(227, 24, 55, 0.45);
+  outline-offset: 3px;
+}
+
+.hero-kicker {
+  background: rgba(227, 24, 55, 0.1);
+  border: 1px solid rgba(227, 24, 55, 0.28);
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.chip-blue {
+  border-color: rgba(227, 24, 55, 0.42);
+  background: rgba(227, 24, 55, 0.08);
+}
+
+.chip-orange {
+  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.06);
+}

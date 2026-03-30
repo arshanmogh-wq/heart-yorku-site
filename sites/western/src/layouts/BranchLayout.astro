@@ -1,7 +1,9 @@
 ---
-import "../styles/global.css";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
+import "../../../../src/styles/global.css";
+import "../styles/branch-theme.css";
+import BranchNav from "../components/BranchNav.astro";
+import BranchFooter from "../components/BranchFooter.astro";
+import { MAIN_CLUB_SITE, branch } from "../site.ts";
 
 export interface Props {
   title?: string;
@@ -11,9 +13,9 @@ export interface Props {
 }
 
 const {
-  title = "HEART — Health Equity Advocacy Response Team",
-  description = "HEART is a York University student-led organization advancing health equity through advocacy, education, outreach, and community partnerships.",
-  image = "/social-card.svg",
+  title = branch.defaultTitle,
+  description = branch.defaultDescription,
+  image = branch.socialImage,
   noindex = false,
 } = Astro.props;
 
@@ -22,21 +24,27 @@ const canonicalURL = new URL(Astro.url.pathname, siteURL);
 const socialImageURL = new URL(image, siteURL);
 const robots = noindex ? "noindex, nofollow" : "index, follow";
 const isHomePage = Astro.url.pathname === "/";
+const mainOrigin = MAIN_CLUB_SITE.replace(/\/$/, "");
 const organizationJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "HEART",
-  alternateName: "Health Equity Advocacy Response Team",
+  name: branch.orgSchemaName,
+  alternateName: branch.orgAlternateName,
   url: siteURL.toString(),
-  logo: new URL("/images/heart-logo.jpg", siteURL).toString(),
-  email: "heartyorku@gmail.com",
-  sameAs: ["https://www.instagram.com/heart_yorku"],
+  parentOrganization: {
+    "@type": "Organization",
+    name: "HEART",
+    url: mainOrigin,
+  },
+  logo: new URL(branch.logoSrc, siteURL).toString(),
+  email: branch.contactEmail,
+  sameAs: [branch.instagramUrl],
 });
 const websiteJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "HEART",
-  alternateName: "Health Equity Advocacy Response Team",
+  name: branch.siteOgName,
+  alternateName: branch.websiteAlternateName,
   url: siteURL.toString(),
 });
 ---
@@ -47,34 +55,31 @@ const websiteJsonLd = JSON.stringify({
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    
-    <!-- Primary Meta Tags -->
+
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="HEART" />
+    <meta property="og:site_name" content={branch.siteOgName} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={socialImageURL} />
     <meta property="og:image:alt" content={`${title} social preview`} />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageURL} />
     <meta name="twitter:image:alt" content={`${title} social preview`} />
 
-    <link rel="icon" type="image/jpeg" href="/images/heart-logo.jpg" />
-    <link rel="shortcut icon" href="/images/heart-logo.jpg" />
-    <link rel="apple-touch-icon" href="/images/heart-logo.jpg" />
-    <meta name="theme-color" content="#0B2239" />
+    <link rel="icon" type="image/jpeg" href={branch.logoSrc} />
+    <link rel="shortcut icon" href={branch.logoSrc} />
+    <link rel="apple-touch-icon" href={branch.logoSrc} />
+    <meta name="theme-color" content={branch.themeColor} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -87,10 +92,22 @@ const websiteJsonLd = JSON.stringify({
 
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <Nav />
+    <BranchNav />
     <main id="main" class="site-main">
       <slot />
     </main>
-    <Footer />
+    <BranchFooter />
   </body>
 </html>
+
+<style is:global>
+  .branch-site-footer .footer-grid {
+    grid-template-columns: 1.25fr 0.9fr 1fr 1fr;
+  }
+
+  @media (max-width: 900px) {
+    .branch-site-footer .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

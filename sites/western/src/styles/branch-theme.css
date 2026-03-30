@@ -1,0 +1,49 @@
+/*
+ * Western University — official brand colors
+ * Source of truth: docs/branch-brand-colors.md
+ */
+:root {
+  --brand-western-purple: #4f2683;
+  --brand-white: #ffffff;
+  --brand-grey-silver: #807f83;
+  --brand-grey-cool: #63666a;
+
+  /* Shared layout tokens (global.css) */
+  --navy: #2a1a45;
+  --text: #2b2830;
+  --muted: rgba(99, 102, 106, 0.88);
+
+  --blue-500: var(--brand-western-purple);
+  --blue-700: var(--brand-grey-cool);
+
+  --orange-600: var(--brand-western-purple);
+  --orange-200: rgba(79, 38, 131, 0.16);
+
+  --border: rgba(99, 102, 106, 0.22);
+}
+
+body {
+  background-color: var(--brand-white);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(79, 38, 131, 0.45);
+  outline-offset: 3px;
+}
+
+.hero-kicker {
+  background: rgba(79, 38, 131, 0.1);
+  border: 1px solid rgba(79, 38, 131, 0.3);
+  color: rgba(42, 26, 69, 0.92);
+}
+
+.chip-blue {
+  border-color: rgba(79, 38, 131, 0.45);
+  background: rgba(79, 38, 131, 0.1);
+}
+
+.chip-orange {
+  border-color: rgba(99, 102, 106, 0.35);
+  background: rgba(99, 102, 106, 0.1);
+}

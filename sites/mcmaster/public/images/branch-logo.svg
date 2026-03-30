@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="t">
+  <title id="t">HEART McMaster branch logo</title>
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f3e8ec" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="44" fill="#7a003c" />
+  <rect x="14" y="14" width="172" height="172" rx="36" fill="url(#g)" stroke="#fdbf57" stroke-width="4" />
+  <path d="M62 52h26v38h26V52h26v96h-26V99h-26v49H62V52Z" fill="#fdbf57" />
+</svg>

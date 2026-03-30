@@ -1,0 +1,29 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { branch } from "../site.ts";
+---
+
+<BranchLayout
+  title={`Media — HEART ${branch.shortName}`}
+  description={`Posters, photos, and graphics from HEART at ${branch.universityName}.`}
+>
+  <div class="page">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Media · McMaster branch</h1>
+        <p class="section-lead">
+          Maroon-forward templates, recap reels, and printable quarter-sheets for Hamilton live here.
+          Keeping media on the branch site lets McMaster iterate quickly without waiting on other campuses.
+        </p>
+        <p class="section-lead">
+          <strong>File home:</strong> drop creatives in <code>sites/mcmaster/public/posters/</code> or
+          <code>sites/mcmaster/public/gallery/</code>, then embed or link them from this route.
+        </p>
+        <p class="section-lead">
+          Tag us:
+          <a href={branch.instagramUrl} target="_blank" rel="noopener noreferrer">{branch.instagramHandle}</a>.
+        </p>
+      </div>
+    </section>
+  </div>
+</BranchLayout>

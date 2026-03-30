@@ -1,0 +1,49 @@
+/*
+ * McMaster University — Heritage palette
+ * Source of truth: docs/branch-brand-colors.md
+ */
+:root {
+  --brand-maroon: #7a003c;
+  --brand-gold: #fdbf57;
+  --brand-grey: #5e6a71;
+
+  /* Shared layout tokens (global.css) */
+  --navy: var(--brand-maroon);
+  --text: #2a2428;
+  --muted: rgba(94, 106, 113, 0.92);
+
+  /* Gradients use blue-500 → orange-600 (global.css): gold → maroon */
+  --blue-500: var(--brand-gold);
+  --blue-700: var(--brand-maroon);
+
+  --orange-600: var(--brand-maroon);
+  --orange-200: rgba(122, 0, 60, 0.16);
+
+  --border: rgba(94, 106, 113, 0.22);
+}
+
+body {
+  background-color: #ffffff;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(122, 0, 60, 0.45);
+  outline-offset: 3px;
+}
+
+.hero-kicker {
+  background: rgba(253, 191, 87, 0.22);
+  border: 1px solid rgba(253, 191, 87, 0.45);
+  color: #3a3034;
+}
+
+.chip-blue {
+  border-color: rgba(122, 0, 60, 0.4);
+  background: rgba(122, 0, 60, 0.08);
+}
+
+.chip-orange {
+  border-color: rgba(253, 191, 87, 0.65);
+  background: rgba(253, 191, 87, 0.18);
+}

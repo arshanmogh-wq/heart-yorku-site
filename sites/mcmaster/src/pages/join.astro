@@ -1,0 +1,35 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { MAIN_CLUB_SITE, branch } from "../site.ts";
+---
+
+<BranchLayout
+  title={`Join — HEART ${branch.shortName}`}
+  description={`Get involved with HEART at ${branch.universityName}.`}
+>
+  <div class="page">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Join HEART at McMaster</h1>
+        <p class="section-lead">
+          McMaster students join through this branch for Hamilton-specific teams (education, logistics,
+          partnerships). Expect a mix of on-campus hours and remote prep—different from York or Western’s
+          rhythms, so read this page even if you have friends in other HEART chapters.
+        </p>
+        <p class="section-lead">
+          <strong>Ready?</strong> Email <a href={`mailto:${branch.contactEmail}`}>{branch.contactEmail}</a>
+          with “Join — McMaster” plus your program and weekly availability. We will loop you into the next
+          exec check-in or orientation bundle.
+        </p>
+        <p class="section-lead">
+          For <strong>shared</strong> intake materials across HEART, use the
+          <a href={`${MAIN_CLUB_SITE.replace(/\/$/, "")}/join`}>main HEART Join page</a>.
+        </p>
+        <div class="hero-actions" style="margin-top: 1rem;">
+          <a class="button button-primary" href={`mailto:${branch.contactEmail}`}>Email McMaster branch</a>
+          <a class="button button-secondary" href="/events">Branch events</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</BranchLayout>

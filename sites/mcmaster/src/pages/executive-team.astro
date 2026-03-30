@@ -1,0 +1,26 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { branch } from "../site.ts";
+---
+
+<BranchLayout
+  title={`Executive team — HEART ${branch.shortName}`}
+  description={`Leadership contacts for HEART at ${branch.universityName} (coming soon).`}
+>
+  <div class="page">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Executive team · McMaster</h1>
+        <p class="section-lead">
+          McMaster’s coordinating team, portfolio owners, and equity officer (if applicable) will publish
+          headshots and responsibilities here. The umbrella HEART site stays focused on mission-wide content,
+          not <strong>Hamilton</strong> leadership rosters.
+        </p>
+        <p class="section-lead">
+          <strong>Status:</strong> not live yet—check back after ratification. Need a named contact today?
+          Email <a href={`mailto:${branch.contactEmail}`}>{branch.contactEmail}</a> and we will route you.
+        </p>
+      </div>
+    </section>
+  </div>
+</BranchLayout>

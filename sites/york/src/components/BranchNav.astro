@@ -1,0 +1,139 @@
+---
+import { MAIN_CLUB_SITE, branch } from "../site.ts";
+
+const main = MAIN_CLUB_SITE.replace(/\/$/, "");
+
+const normalizePath = (value: string) => {
+  if (!value || value === "/") return "/";
+  return value.endsWith("/") ? value.slice(0, -1) : value;
+};
+
+const pathname = normalizePath(Astro.url.pathname);
+const isActive = (href: string) => normalizePath(href) === pathname;
+---
+
+<header class="site-header branch-site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label={`HEART ${branch.shortName} home`}>
+      <img
+        class="brand-logo"
+        src={branch.logoSrc}
+        alt={`HEART ${branch.shortName} logo`}
+        loading="eager"
+      />
+      <div class="brand-text">
+        <span class="brand-name">HEART</span>
+        <span class="brand-subtitle">{branch.universityName} branch</span>
+      </div>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls={branch.navId}
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id={branch.navId} class="nav" aria-label={branch.navAriaLabel}>
+      <ul class="nav-list">
+        <li>
+          <a
+            class={`nav-link ${isActive("/") ? "is-active" : ""}`}
+            href="/"
+            aria-current={isActive("/") ? "page" : undefined}
+          >
+            {branch.homeNavLabel}
+          </a>
+        </li>
+        <li>
+          <a
+            class={`nav-link nav-link-cta ${isActive("/join") ? "is-active" : ""}`}
+            href="/join"
+            aria-current={isActive("/join") ? "page" : undefined}
+          >
+            Join
+          </a>
+        </li>
+        <li>
+          <a
+            class={`nav-link ${isActive("/media") ? "is-active" : ""}`}
+            href="/media"
+            aria-current={isActive("/media") ? "page" : undefined}
+          >
+            Media
+          </a>
+        </li>
+        <li>
+          <a
+            class={`nav-link ${isActive("/events") ? "is-active" : ""}`}
+            href="/events"
+            aria-current={isActive("/events") ? "page" : undefined}
+          >
+            Events
+          </a>
+        </li>
+        <li>
+          <a
+            class={`nav-link ${isActive("/executive-team") ? "is-active" : ""}`}
+            href="/executive-team"
+            aria-current={isActive("/executive-team") ? "page" : undefined}
+          >
+            Team
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href={`${main}/about`}>About</a>
+        </li>
+      </ul>
+    </nav>
+
+    <a class="button button-secondary header-cta branch-main-link" href={main}>
+      Main club site
+    </a>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.querySelector(".branch-site-header .menu-toggle");
+  const nav = document.querySelector(".branch-site-header .nav");
+  const navLinks = document.querySelectorAll(".branch-site-header .nav-link");
+
+  if (menuToggle instanceof HTMLButtonElement && nav instanceof HTMLElement) {
+    const closeMenu = () => {
+      nav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    };
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+        menuToggle.focus();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (
+        target instanceof Node &&
+        !nav.contains(target) &&
+        !menuToggle.contains(target)
+      ) {
+        closeMenu();
+      }
+    });
+  }
+</script>

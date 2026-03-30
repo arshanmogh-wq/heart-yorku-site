@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>HEART Western</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#ede8f5" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#4f2683" />
+  <rect x="6" y="6" width="52" height="52" rx="14" fill="url(#bg)" />
+  <rect x="6" y="6" width="52" height="52" rx="14" fill="none" stroke="#4f2683" stroke-width="2" />
+  <path d="M20 16h8v12h8V16h8v32h-8V35h-8v13h-8V16Z" fill="#4f2683" />
+</svg>

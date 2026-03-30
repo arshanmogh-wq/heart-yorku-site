@@ -1,0 +1,59 @@
+---
+import BranchLayout from "../layouts/BranchLayout.astro";
+import { MAIN_CLUB_SITE, branch } from "../site.ts";
+
+const WESTERN_JOIN_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfiC6JCAqnQ2t5DMp7L7wWjHt_sS4poyPAD0uk_0ejoDNu78A/viewform?usp=publish-editor";
+---
+
+<BranchLayout
+  title={`Join — HEART ${branch.shortName}`}
+  description={`Get involved with HEART at ${branch.universityName}.`}
+>
+  <div class="page">
+    <section class="section">
+      <div class="container">
+        <div class="western-join-form">
+          <h2 class="section-title" style="font-size: clamp(1.25rem, 2.2vw, 1.6rem); padding-bottom: 0;">
+            Western member sign-up form
+          </h2>
+          <p class="section-lead">
+            Fill out the form below. If the embed doesn’t load well on your device, open it in a new tab.
+          </p>
+
+          <div class="hero-actions" style="margin-top: 0.75rem;">
+            <a
+              class="button button-secondary"
+              href={WESTERN_JOIN_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open form in a new tab
+            </a>
+          </div>
+
+          <div
+            class="form-embed"
+            style="
+              margin-top: 1rem;
+              border-radius: 16px;
+              overflow: hidden;
+              border: 1px solid rgba(26, 26, 26, 0.12);
+              box-shadow: 0 18px 40px rgba(11, 34, 57, 0.10);
+            "
+          >
+            <iframe
+              title="HEART Western membership form"
+              src={`${WESTERN_JOIN_FORM_URL}&embedded=true`}
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              style="width: 100%; height: 78vh; min-height: 900px; border: 0;"
+            >
+              Loading…
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BranchLayout>
