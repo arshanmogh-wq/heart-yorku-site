@@ -448,19 +448,38 @@ strong {
   color: var(--text);
   text-align: left;
   cursor: pointer;
-  transition: background 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease;
   text-decoration: none;
   box-sizing: border-box;
 }
 
-.branch-dropdown-item:hover {
-  background: rgba(87, 206, 212, 0.12);
+/* Branch menu hovers — align with sites/york & sites/western branch-theme palettes */
+.branch-dropdown-item--york:hover,
+.branch-dropdown-item--york:focus-visible {
+  background: #e31837;
+  color: #fff;
 }
 
-.branch-dropdown-item:focus-visible {
+.branch-dropdown-item--western:hover,
+.branch-dropdown-item--western:focus-visible {
+  background: #4f2683;
+  color: #fff;
+}
+
+.branch-dropdown-item--mcmaster:hover,
+.branch-dropdown-item--mcmaster:focus-visible {
+  background: #7a003c;
+  color: #fff;
+}
+
+.branch-dropdown-item--york:focus-visible,
+.branch-dropdown-item--western:focus-visible,
+.branch-dropdown-item--mcmaster:focus-visible {
   outline: none;
-  background: rgba(87, 206, 212, 0.12);
-  box-shadow: inset 0 0 0 2px rgba(87, 206, 212, 0.45);
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, currentColor 35%, transparent);
 }
 
 /* Page + sections */
