@@ -1,6 +1,9 @@
 ---
 import BranchLayout from "../layouts/BranchLayout.astro";
 import { MAIN_CLUB_SITE, branch } from "../site.ts";
+
+const WESTERN_JOIN_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfiC6JCAqnQ2t5DMp7L7wWjHt_sS4poyPAD0uk_0ejoDNu78A/viewform?usp=publish-editor";
 ---
 
 <BranchLayout
@@ -10,24 +13,45 @@ import { MAIN_CLUB_SITE, branch } from "../site.ts";
   <div class="page">
     <section class="section">
       <div class="container">
-        <h1 class="section-title">Join HEART at Western</h1>
-        <p class="section-lead">
-          Whether you are in Med Sci, Social Sci, or an allied program, Western’s HEART crew needs writers,
-          designers, facilitators, and folks who want to learn. This page is the <strong>Western-only</strong>
-          entry point—roles and term expectations differ from other campuses.
-        </p>
-        <p class="section-lead">
-          <strong>Next step:</strong> email <a href={`mailto:${branch.contactEmail}`}>{branch.contactEmail}</a>
-          with “Join — Western” in the subject line. Tell us your faculty/year and whether you prefer events,
-          advocacy, or comms. We will add you to the Discord or email list we use for London planning.
-        </p>
-        <p class="section-lead">
-          Need the <strong>national onboarding</strong> form? Visit the
-          <a href={`${MAIN_CLUB_SITE.replace(/\/$/, "")}/join`}>main HEART Join page</a>.
-        </p>
-        <div class="hero-actions" style="margin-top: 1rem;">
-          <a class="button button-primary" href={`mailto:${branch.contactEmail}`}>Email Western branch</a>
-          <a class="button button-secondary" href="/events">Branch events</a>
+        <div class="western-join-form">
+          <h2 class="section-title" style="font-size: clamp(1.25rem, 2.2vw, 1.6rem); padding-bottom: 0;">
+            Western member sign-up form
+          </h2>
+          <p class="section-lead">
+            Fill out the form below. If the embed doesn’t load well on your device, open it in a new tab.
+          </p>
+
+          <div class="hero-actions" style="margin-top: 0.75rem;">
+            <a
+              class="button button-secondary"
+              href={WESTERN_JOIN_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open form in a new tab
+            </a>
+          </div>
+
+          <div
+            class="form-embed"
+            style="
+              margin-top: 1rem;
+              border-radius: 16px;
+              overflow: hidden;
+              border: 1px solid rgba(26, 26, 26, 0.12);
+              box-shadow: 0 18px 40px rgba(11, 34, 57, 0.10);
+            "
+          >
+            <iframe
+              title="HEART Western membership form"
+              src={`${WESTERN_JOIN_FORM_URL}&embedded=true`}
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              style="width: 100%; height: 78vh; min-height: 900px; border: 0;"
+            >
+              Loading…
+            </iframe>
+          </div>
         </div>
       </div>
     </section>

@@ -1,0 +1,190 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { branchMicrositeLinks } from "../config/branchSites.ts";
+
+const joinUrl = (origin: string) => `${origin.replace(/\/$/, "")}/join`;
+const menuId = "join-branch-menu";
+---
+
+<BaseLayout
+  title="Choose your branch | HEART"
+  description="Select your HEART branch to see how to join at your university."
+>
+  <div class="join-branch-page">
+    <section class="join-branch-card" aria-labelledby="join-branch-title">
+      <h1 id="join-branch-title" class="join-branch-title">Select your branch</h1>
+      <p class="join-branch-subtitle">
+        Choose your university to continue to the correct Join page.
+      </p>
+
+      <div class="join-branch-control header-branch branch-dropdown">
+        <button
+          type="button"
+          class="branch-dropdown-toggle join-branch-toggle"
+          id="join-branch-toggle"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls={menuId}
+        >
+          Choose a branch
+          <span class="branch-dropdown-chevron" aria-hidden="true"></span>
+        </button>
+        <ul
+          id={menuId}
+          class="branch-dropdown-menu join-branch-menu"
+          role="menu"
+          aria-labelledby="join-branch-toggle"
+          hidden
+        >
+          <li role="none">
+            <a class="branch-dropdown-item branch-dropdown-item--york" role="menuitem" href={joinUrl(branchMicrositeLinks.york)}>
+              York
+            </a>
+          </li>
+          <li role="none">
+            <a
+              class="branch-dropdown-item branch-dropdown-item--western"
+              role="menuitem"
+              href={joinUrl(branchMicrositeLinks.western)}
+            >
+              Western
+            </a>
+          </li>
+          <!-- McMaster: hidden until the microsite is ready to go live — uncomment to show.
+          <li role="none">
+            <a
+              class="branch-dropdown-item branch-dropdown-item--mcmaster"
+              role="menuitem"
+              href={joinUrl(branchMicrositeLinks.mcmaster)}
+            >
+              McMaster
+            </a>
+          </li>
+          -->
+        </ul>
+      </div>
+
+      <noscript>
+        <div class="join-branch-fallback">
+          <p>Please use one of these links:</p>
+          <ul>
+            <li><a href={joinUrl(branchMicrositeLinks.york)}>York Join</a></li>
+            <li><a href={joinUrl(branchMicrositeLinks.western)}>Western Join</a></li>
+          </ul>
+        </div>
+      </noscript>
+    </section>
+  </div>
+
+  <script>
+    const branchRoot = document.querySelector(".join-branch-control");
+    const branchToggle = document.querySelector("#join-branch-toggle");
+    const branchMenu = document.querySelector("#join-branch-menu");
+
+    if (
+      branchRoot instanceof HTMLElement &&
+      branchToggle instanceof HTMLButtonElement &&
+      branchMenu instanceof HTMLElement
+    ) {
+      const closeBranch = () => {
+        branchMenu.hidden = true;
+        branchToggle.setAttribute("aria-expanded", "false");
+        branchRoot.classList.remove("is-open");
+      };
+
+      branchToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const isOpen = branchRoot.classList.toggle("is-open");
+        branchMenu.hidden = !isOpen;
+        branchToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && branchRoot.classList.contains("is-open")) {
+          closeBranch();
+          branchToggle.focus();
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        const target = event.target;
+        if (
+          target instanceof Node &&
+          !branchRoot.contains(target) &&
+          branchRoot.classList.contains("is-open")
+        ) {
+          closeBranch();
+        }
+      });
+
+      branchMenu.querySelectorAll("a.branch-dropdown-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          closeBranch();
+        });
+      });
+    }
+  </script>
+
+  <style>
+    .join-branch-page {
+      min-height: calc(100vh - 10rem);
+      display: grid;
+      place-items: center;
+      padding: 3.5rem 1.25rem;
+    }
+
+    .join-branch-card {
+      width: min(680px, 100%);
+      background: #ffffff;
+      border: 1px solid rgba(11, 34, 57, 0.12);
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(11, 34, 57, 0.12);
+      padding: clamp(1.25rem, 3vw, 2.25rem);
+    }
+
+    .join-branch-title {
+      font-family: var(--font-display, "Outfit", system-ui, sans-serif);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+      color: #0b2239;
+    }
+
+    .join-branch-subtitle {
+      margin: 0 0 1.5rem;
+      color: rgba(11, 34, 57, 0.78);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .join-branch-control {
+      display: flex;
+      justify-content: center;
+    }
+
+    .join-branch-toggle {
+      font-size: 1.2rem;
+      padding: 14px 16px;
+    }
+
+    .join-branch-menu {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+      min-width: min(520px, 92vw);
+    }
+
+    .join-branch-menu .branch-dropdown-item {
+      justify-content: center;
+      font-size: 1.1rem;
+      padding: 14px 14px;
+    }
+
+    .join-branch-fallback {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(11, 34, 57, 0.12);
+    }
+  </style>
+</BaseLayout>
+

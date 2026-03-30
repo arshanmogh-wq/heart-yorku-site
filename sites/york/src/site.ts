@@ -23,6 +23,6 @@ export const branch = {
   defaultTitle: "HEART York — Health Equity Advocacy Response Team",
   defaultDescription:
     "HEART at York University: student-led health equity advocacy, education, outreach, and community partnerships.",
-  logoSrc: "/images/branch-logo.svg",
+  logoSrc: "/images/heart-logo.png",
   socialImage: "/social-card.svg",
 } as const;

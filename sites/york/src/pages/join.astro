@@ -1,6 +1,9 @@
 ---
 import BranchLayout from "../layouts/BranchLayout.astro";
-import { MAIN_CLUB_SITE, branch } from "../site.ts";
+import { branch } from "../site.ts";
+
+const YORK_JOIN_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSe7ovKtnT5WIpPmU920JeTv8WpCcDoNra5Sona9ExodDW6VVA/viewform?pli=1";
 ---
 
 <BranchLayout
@@ -10,24 +13,45 @@ import { MAIN_CLUB_SITE, branch } from "../site.ts";
   <div class="page">
     <section class="section">
       <div class="container">
-        <h1 class="section-title">Join HEART at York</h1>
-        <p class="section-lead">
-          York students can plug into <strong>this branch</strong> for on-campus roles, working groups,
-          and event crews. You do not need a health-sci background—just interest in equity and community.
-        </p>
-        <p class="section-lead">
-          <strong>How to start:</strong> email <a href={`mailto:${branch.contactEmail}`}>{branch.contactEmail}</a>
-          with “Join — York” in the subject, or DM
-          <a href={branch.instagramUrl} target="_blank" rel="noopener noreferrer">{branch.instagramHandle}</a>.
-          We will point you to the next general meeting or volunteer shift.
-        </p>
-        <p class="section-lead">
-          For <strong>organization-wide</strong> onboarding and shared forms, see the
-          <a href={`${MAIN_CLUB_SITE.replace(/\/$/, "")}/join`}>main HEART Join page</a>.
-        </p>
-        <div class="hero-actions" style="margin-top: 1rem;">
-          <a class="button button-primary" href={`mailto:${branch.contactEmail}`}>Email York branch</a>
-          <a class="button button-secondary" href="/events">Branch events</a>
+        <div class="western-join-form">
+          <h2 class="section-title" style="font-size: clamp(1.25rem, 2.2vw, 1.6rem); padding-bottom: 0;">
+            York member sign-up form
+          </h2>
+          <p class="section-lead">
+            Fill out the form below. If the embed doesn’t load well on your device, open it in a new tab.
+          </p>
+
+          <div class="hero-actions" style="margin-top: 0.75rem;">
+            <a
+              class="button button-secondary"
+              href={YORK_JOIN_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open form in a new tab
+            </a>
+          </div>
+
+          <div
+            class="form-embed"
+            style="
+              margin-top: 1rem;
+              border-radius: 16px;
+              overflow: hidden;
+              border: 1px solid rgba(26, 26, 26, 0.12);
+              box-shadow: 0 18px 40px rgba(11, 34, 57, 0.10);
+            "
+          >
+            <iframe
+              title="HEART membership form"
+              src={`${YORK_JOIN_FORM_URL}&embedded=true`}
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              style="width: 100%; height: 78vh; min-height: 900px; border: 0;"
+            >
+              Loading…
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
