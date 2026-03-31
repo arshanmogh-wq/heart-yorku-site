@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npm run build:branches",
     "preview": "astro preview",
     "astro": "astro",
     "dev:york": "npm run dev --prefix sites/york",
@@ -16,7 +16,7 @@
     "dev:mcmaster": "npm run dev --prefix sites/mcmaster",
     "build:mcmaster": "npm run build --prefix sites/mcmaster",
     "build:branches": "npm run build:york && npm run build:western && npm run build:mcmaster",
-    "build:all": "npm run build && npm run build:branches"
+    "build:all": "npm run build"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
