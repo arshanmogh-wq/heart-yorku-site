@@ -1,7 +1,7 @@
 /**
  * Branch mini-site URLs.
  * - Local dev: use `npm run dev:york` / `dev:western` / `dev:mcmaster` ports.
- * - Production: use env overrides if provided; otherwise fall back to branch paths.
+ * - Production: use env overrides if provided; otherwise use safe live routes.
  */
 export type BranchSlug = "york" | "western" | "mcmaster";
 
@@ -12,9 +12,10 @@ const LOCAL_BRANCH_ORIGINS: Record<BranchSlug, string> = {
 };
 
 const PROD_BRANCH_ORIGINS: Record<BranchSlug, string> = {
-  york: import.meta.env.PUBLIC_BRANCH_YORK_URL ?? "/york/",
-  western: import.meta.env.PUBLIC_BRANCH_WESTERN_URL ?? "/western/",
-  mcmaster: import.meta.env.PUBLIC_BRANCH_MCMASTER_URL ?? "/mcmaster/",
+  // Fallbacks avoid dead links while branch microsites are not deployed.
+  york: import.meta.env.PUBLIC_BRANCH_YORK_URL ?? "/",
+  western: import.meta.env.PUBLIC_BRANCH_WESTERN_URL ?? "/join-branch",
+  mcmaster: import.meta.env.PUBLIC_BRANCH_MCMASTER_URL ?? "/join-branch",
 };
 
 const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1", "::1"]);
