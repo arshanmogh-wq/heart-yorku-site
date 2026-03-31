@@ -22,6 +22,6 @@ export const branch = {
   defaultTitle: "HEART McMaster — Health Equity Advocacy Response Team",
   defaultDescription:
     "HEART at McMaster University: student-led health equity advocacy, education, outreach, and community partnerships.",
-  logoSrc: "/images/branch-logo.svg",
-  socialImage: "/social-card.svg",
+  logoSrc: import.meta.env.BASE_URL + "images/branch-logo.svg",
+  socialImage: import.meta.env.BASE_URL + "social-card.svg",
 } as const;

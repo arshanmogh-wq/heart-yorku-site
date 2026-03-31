@@ -27,7 +27,7 @@ import { MAIN_CLUB_SITE, branch } from "../site.ts";
         </p>
         <div class="hero-actions" style="margin-top: 1rem;">
           <a class="button button-primary" href={`mailto:${branch.contactEmail}`}>Email McMaster branch</a>
-          <a class="button button-secondary" href="/events">Branch events</a>
+          <a class="button button-secondary" href={import.meta.env.BASE_URL + "events"}>Branch events</a>
         </div>
       </div>
     </section>

@@ -22,11 +22,11 @@ const main = MAIN_CLUB_SITE.replace(/\/$/, "");
     <div class="footer-col">
       <h3 class="footer-heading">This branch</h3>
       <ul class="footer-links">
-        <li><a href="/">{branch.homeNavLabel}</a></li>
-        <li><a href="/join">Join</a></li>
-        <li><a href="/media">Media</a></li>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/executive-team">Team</a></li>
+        <li><a href={import.meta.env.BASE_URL}>{branch.homeNavLabel}</a></li>
+        <li><a href={import.meta.env.BASE_URL + "join"}>Join</a></li>
+        <li><a href={import.meta.env.BASE_URL + "media"}>Media</a></li>
+        <li><a href={import.meta.env.BASE_URL + "events"}>Events</a></li>
+        <li><a href={import.meta.env.BASE_URL + "executive-team"}>Team</a></li>
       </ul>
     </div>
 

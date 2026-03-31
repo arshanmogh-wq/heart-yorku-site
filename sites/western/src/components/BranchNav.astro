@@ -14,7 +14,7 @@ const isActive = (href: string) => normalizePath(href) === pathname;
 
 <header class="site-header branch-site-header">
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label={`HEART ${branch.shortName} home`}>
+    <a class="brand" href={import.meta.env.BASE_URL} aria-label={`HEART ${branch.shortName} home`}>
       <img
         class="brand-logo"
         src={branch.logoSrc}
@@ -43,45 +43,45 @@ const isActive = (href: string) => normalizePath(href) === pathname;
       <ul class="nav-list">
         <li>
           <a
-            class={`nav-link ${isActive("/") ? "is-active" : ""}`}
-            href="/"
-            aria-current={isActive("/") ? "page" : undefined}
+            class={`nav-link ${isActive(import.meta.env.BASE_URL) ? "is-active" : ""}`}
+            href={import.meta.env.BASE_URL}
+            aria-current={isActive(import.meta.env.BASE_URL) ? "page" : undefined}
           >
             {branch.homeNavLabel}
           </a>
         </li>
         <li>
           <a
-            class={`nav-link nav-link-cta ${isActive("/join") ? "is-active" : ""}`}
-            href="/join"
-            aria-current={isActive("/join") ? "page" : undefined}
+            class={`nav-link nav-link-cta ${isActive(import.meta.env.BASE_URL + "join") ? "is-active" : ""}`}
+            href={import.meta.env.BASE_URL + "join"}
+            aria-current={isActive(import.meta.env.BASE_URL + "join") ? "page" : undefined}
           >
             Join
           </a>
         </li>
         <li>
           <a
-            class={`nav-link ${isActive("/media") ? "is-active" : ""}`}
-            href="/media"
-            aria-current={isActive("/media") ? "page" : undefined}
+            class={`nav-link ${isActive(import.meta.env.BASE_URL + "media") ? "is-active" : ""}`}
+            href={import.meta.env.BASE_URL + "media"}
+            aria-current={isActive(import.meta.env.BASE_URL + "media") ? "page" : undefined}
           >
             Media
           </a>
         </li>
         <li>
           <a
-            class={`nav-link ${isActive("/events") ? "is-active" : ""}`}
-            href="/events"
-            aria-current={isActive("/events") ? "page" : undefined}
+            class={`nav-link ${isActive(import.meta.env.BASE_URL + "events") ? "is-active" : ""}`}
+            href={import.meta.env.BASE_URL + "events"}
+            aria-current={isActive(import.meta.env.BASE_URL + "events") ? "page" : undefined}
           >
             Events
           </a>
         </li>
         <li>
           <a
-            class={`nav-link ${isActive("/executive-team") ? "is-active" : ""}`}
-            href="/executive-team"
-            aria-current={isActive("/executive-team") ? "page" : undefined}
+            class={`nav-link ${isActive(import.meta.env.BASE_URL + "executive-team") ? "is-active" : ""}`}
+            href={import.meta.env.BASE_URL + "executive-team"}
+            aria-current={isActive(import.meta.env.BASE_URL + "executive-team") ? "page" : undefined}
           >
             Team
           </a>
