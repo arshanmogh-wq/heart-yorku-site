@@ -13,9 +13,9 @@ const LOCAL_BRANCH_ORIGINS: Record<BranchSlug, string> = {
 
 const PROD_BRANCH_ORIGINS: Record<BranchSlug, string> = {
   // Fallbacks avoid dead links while branch microsites are not deployed.
-  york: import.meta.env.PUBLIC_BRANCH_YORK_URL ?? "/",
-  western: import.meta.env.PUBLIC_BRANCH_WESTERN_URL ?? "/join-branch",
-  mcmaster: import.meta.env.PUBLIC_BRANCH_MCMASTER_URL ?? "/join-branch",
+  york: import.meta.env.PUBLIC_BRANCH_YORK_URL ?? "/york",
+  western: import.meta.env.PUBLIC_BRANCH_WESTERN_URL ?? "/western",
+  mcmaster: import.meta.env.PUBLIC_BRANCH_MCMASTER_URL ?? "/mcmaster",
 };
 
 const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1", "::1"]);
